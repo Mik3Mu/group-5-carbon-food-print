@@ -1,0 +1,143 @@
+,Product,Type,Country of Origin,Method of Transportation,Organic,Seasonal,Type of Packaging,Processed,CO2_Equivalent_per_Kilo,Entity,food_emissions_land_use,food_emissions_farm,food_emissions_animal_feed,food_emissions_processing,food_emissions_transport,food_emissions_retail,food_emissions_packaging,Food group,GHGEs per 100g (Median)
+0,Avocado,Fruit,Peru,nan,False,nan,nan,False,0.8,,,,,,,,,,
+1,Avocado,Fruit,Peru,nan,True,nan,nan,False,0.8,,,,,,,,,,
+2,Strawberries,Fruit,nan,nan,nan,False,nan,unprocessed,3.4,,,,,,,,,,
+3,Strawberries,Fruit,Germany,nan,nan,True,nan,unprocessed,0.3,,,,,,,,,,
+4,Pineapple,Fruit,nan,Ship,nan,nan,nan,unprocessed,0.6,,,,,,,,,,
+5,Pineapple,Fruit,nan,Plane,nan,nan,nan,unprocessed,15.1,,,,,,,,,,
+6,Apples,Fruit,New Zealand,nan,nan,False,nan,unprocessed,0.8,,,,,,,,,,
+7,Apples,Fruit,Germany,nan,nan,True,nan,unprocessed,0.3,,,,,,,,,,
+8,Peach,Fruit,nan,nan,nan,nan,unpackaged,unprocessed,0.2,,,,,,,,,,
+9,Peach,Fruit,nan,nan,nan,nan,Can,canned,1.6,,,,,,,,,,
+10,Broccoli,Vegetable,nan,nan,nan,nan,unpackaged,unprocessed,0.3,,,,,,,,,,
+11,Broccoli,Vegetable,nan,nan,nan,nan,Plastic,frozen,0.3,,,,,,,,,,
+12,Beans,Vegetable,nan,nan,nan,nan,nan,unprocessed,0.8,,,,,,,,,,
+13,Beans,Vegetable,nan,nan,nan,nan,Can,canned,1.3,,,,,,,,,,
+14,Champignon,Vegetable,nan,nan,nan,True,nan,unprocessed,1.3,,,,,,,,,,
+15,Champignon,Vegetable,nan,nan,nan,True,Can,canned,2.4,,,,,,,,,,
+16,Tomatoes,Vegetable,nan,nan,nan,nan,Metal tube,Paste,4.3,,,,,,,,,,
+17,Tomatoes,Vegetable,nan,nan,nan,nan,Can,canned,1.8,,,,,,,,,,
+18,Carrots,Vegetable,nan,nan,False,nan,nan,unprocessed,0.2,,,,,,,,,,
+19,Carrots,Vegetable,nan,nan,True,nan,nan,unprocessed,0.2,,,,,,,,,,
+20,Butter,Dairy,nan,nan,False,nan,Plastic,processed,9.0,,,,,,,,,,
+21,Butter,Dairy,nan,nan,True,nan,Plastic,processed,11.5,,,,,,,,,,
+22,Cheese,Dairy,nan,nan,False,nan,nan,processed,5.7,,,,,,,,,,
+23,Cheese,Dairy,nan,nan,True,nan,nan,processed,7.2,,,,,,,,,,
+24,Milk,Dairy,nan,nan,True,nan,Carton,unprocessed,1.7,,,,,,,,,,
+25,Oat Milk,Substitute,nan,nan,nan,nan,nan,processed,0.3,,,,,,,,,,
+26,Cream,Dairy,nan,nan,True,nan,nan,processed,5.3,,,,,,,,,,
+27,Oat Cream,Substitute,nan,nan,nan,nan,nan,processed,0.6,,,,,,,,,,
+28,Curd,Dairy,nan,nan,True,nan,nan,processed,4.1,,,,,,,,,,
+29,Soja Curd,Substitute,nan,nan,nan,nan,nan,processed,0.7,,,,,,,,,,
+30,Shrimp,Fish,nan,nan,nan,nan,nan,frozen,12.5,,,,,,,,,,
+31,Salmon from Aquaculture,Fish,nan,nan,nan,nan,nan,unprocessed,5.1,,,,,,,,,,
+32,Beef,Meat,nan,nan,False,nan,nan,unprocessed,13.6,,,,,,,,,,
+33,Beef,Meat,nan,nan,True,nan,nan,unprocessed,15.1,,,,,,,,,,
+34,Pork,Meat,nan,nan,False,nan,nan,unprocessed,4.6,,,,,,,,,,
+35,Pork,Meat,nan,nan,True,nan,nan,unprocessed,5.2,,,,,,,,,,
+36,Tofu,Substitute,nan,nan,nan,nan,Plastic,processed,1.0,,,,,,,,,,
+37,Tempeh,Substitute,nan,nan,nan,nan,Plastic,processed,0.7,,,,,,,,,,
+38,Venison from Deer,Meat,nan,nan,nan,nan,nan,unprocessed,11.5,,,,,,,,,,
+39,Veggie Patties,Substitute,nan,nan,nan,nan,Plastic,processed,1.45,,,,,,,,,,
+40,Brown Bread,Pastries,Germany,nan,False,nan,nan,unprocessed,0.6,,,,,,,,,,
+41,Brown Bread,Pastries,Germany,nan,False,nan,nan,unprocessed,0.6,,,,,,,,,,
+42,Honey,Sweets,nan,nan,nan,nan,Glas,unprocessed,2.0,,,,,,,,,,
+43,Olive Oil,Ingredient,nan,nan,nan,nan,Glas,unprocessed,3.2,,,,,,,,,,
+44,Coconut Oil,Ingredient,nan,nan,nan,nan,Glas,unprocessed,2.3,,,,,,,,,,
+45,Beet Sugar,Ingredient,nan,nan,False,nan,Paper,unprocessed,0.7,,,,,,,,,,
+46,Beet Sugar,Ingredient,nan,nan,True,nan,Paper,unprocessed,0.5,,,,,,,,,,
+47,Peanuts with Shell,Ingredient,nan,nan,False,nan,nan,unprocessed,0.8,,,,,,,,,,
+48,Peanutbutter,Sweets,nan,nan,nan,nan,Glas,processed,2.0,,,,,,,,,,
+49,Beer 0.5L,Drinks,nan,nan,nan,nan,Glas,processed,0.9,,,,,,,,,,
+50,Beer 0.5L,Drinks,nan,nan,nan,nan,Can,processed,1.0,,,,,,,,,,
+51,Lemonade 0.75L,Drinks,nan,nan,nan,nan,Plastic,processed,0.4,,,,,,,,,,
+52,Sparkling Water 0.7L,Drinks,Germany,True,nan,nan,Glas,processed,0.2,,,,,,,,,,
+53,Tap Water,Drinks,nan,nan,Germany,True,unpackaged,unprocessed,0.0,,,,,,,,,,
+54,Wine 0.75L,Drinks,nan,nan,nan,True,Glas,processed,1.0,,,,,,,,,,
+55,Coffee Powder,Drinks,nan,nan,False,True,Plastic,unprocessed,5.6,,,,,,,,,,
+56,Apple Juice 1L,Drinks,nan,nan,nan,True,Glas,processed,0.4,,,,,,,,,,
+57,Orange Juice 1L,Drinks,nan,nan,nan,True,Carton,processed,0.7,,,,,,,,,,
+0,"Tomatoes, heated greenhouse",Vegetable,Germany,nan,False,False,nan,unprocessed,9.3,,,,,,,,,,
+1,"Tomatoes, heated greenhouse",Vegetable,Germany,nan,True,False,nan,unprocessed,9.2,,,,,,,,,,
+2,Tomatoes,Vegetable,Canaries,Plane,nan,nan,nan,unprocessed,7.2,,,,,,,,,,
+3,"Tomatoes, non-heated greenhouse",Vegetable,Germany,nan,False,False,nan,unprocessed,2.3,,,,,,,,,,
+4,"Tomatoes, open air",Vegetable,Spain,nan,nan,nan,nan,unprocessed,0.6,,,,,,,,,,
+5,Tomatoes,Vegetable,Germany,nan,False,True,nan,unprocessed,0.085,,,,,,,,,,
+6,Tomatoes,Vegetable,Germany,nan,True,True,nan,unprocessed,0.035,,,,,,,,,,
+0,Apples,,,,,,,,0.9000000000000001,Apples,0.0,0.2,0.0,0.0,0.1,0.0,0.0,,
+1,Bananas,,,,,,,,2.4,Bananas,0.0,0.3,0.0,0.1,0.3,0.0,0.1,,
+2,Barley,,,,,,,,3.3,Barley,0.0,0.2,0.0,0.1,0.0,0.3,0.5,,
+3,Beef (beef herd),,,,,,,,178.8,Beef (beef herd),16.3,39.4,1.9,1.3,0.3,0.2,0.2,,
+4,Beef (dairy herd),,,,,,,,63.3,Beef (dairy herd),0.9,15.7,2.5,1.1,0.4,0.2,0.3,,
+5,Beet Sugar,,,,,,,,4.2,Beet Sugar,0.0,0.5,0.0,0.2,0.6,0.0,0.1,,
+6,Berries & Grapes,,,,,,,,3.3,Berries & Grapes,0.0,0.7,0.0,0.0,0.2,0.0,0.2,,
+7,Brassicas,,,,,,,,1.2,Brassicas,0.0,0.3,0.0,0.0,0.1,0.0,0.0,,
+8,Cane Sugar,,,,,,,,7.8,Cane Sugar,1.2,0.5,0.0,0.0,0.8,0.0,0.1,,
+9,Cassava,,,,,,,,2.7,Cassava,0.6,0.2,0.0,0.0,0.1,0.0,0.0,,
+10,Cheese,,,,,,,,63.60000000000001,Cheese,4.5,13.1,2.3,0.7,0.1,0.3,0.2,,
+11,Citrus Fruit,,,,,,,,0.8999999999999999,Citrus Fruit,-0.1,0.3,0.0,0.0,0.1,0.0,0.0,,
+12,Coffee,,,,,,,,49.50000000000001,Coffee,3.7,10.4,0.0,0.6,0.1,0.1,1.6,,
+13,Dark Chocolate,,,,,,,,56.099999999999994,Dark Chocolate,14.3,3.7,0.0,0.2,0.1,0.0,0.4,,
+14,Eggs,,,,,,,,13.5,Eggs,0.7,1.3,2.2,0.0,0.1,0.0,0.2,,
+15,Fish (farmed),,,,,,,,15.299999999999997,Fish (farmed),0.5,3.6,0.8,0.0,0.1,0.0,0.1,,
+16,Groundnuts,,,,,,,,7.199999999999999,Groundnuts,0.4,1.4,0.0,0.4,0.1,0.0,0.1,,
+17,Lamb & Mutton,,,,,,,,73.5,Lamb & Mutton,0.5,19.5,2.4,1.1,0.5,0.2,0.3,,
+18,Maize,,,,,,,,3.3000000000000003,Maize,0.3,0.5,0.0,0.1,0.1,0.0,0.1,,
+19,Milk,,,,,,,,8.399999999999999,Milk,0.5,1.5,0.2,0.1,0.1,0.3,0.1,,
+20,Nuts,,,,,,,,0.6,Nuts,-2.1,2.1,0.0,0.0,0.1,0.0,0.1,,
+21,Oatmeal,,,,,,,,4.800000000000001,Oatmeal,0.0,1.4,0.0,0.0,0.1,0.0,0.1,,
+22,Olive Oil,,,,,,,,18.0,Olive Oil,-0.4,4.3,0.0,0.7,0.5,0.0,0.9,,
+23,Onions & Leeks,,,,,,,,0.9000000000000001,Onions & Leeks,0.0,0.2,0.0,0.0,0.1,0.0,0.0,,
+24,Other Fruit,,,,,,,,2.0999999999999996,Other Fruit,0.1,0.4,0.0,0.0,0.2,0.0,0.0,,
+25,Other Pulses,,,,,,,,4.800000000000001,Other Pulses,0.0,1.1,0.0,0.0,0.1,0.0,0.4,,
+26,Other Vegetables,,,,,,,,1.5,Other Vegetables,0.0,0.2,0.0,0.1,0.2,0.0,0.0,,
+27,Palm Oil,,,,,,,,22.799999999999997,Palm Oil,3.1,2.1,0.0,1.3,0.2,0.0,0.9,,
+28,Peas,,,,,,,,2.4,Peas,0.0,0.7,0.0,0.0,0.1,0.0,0.0,,
+29,Pig Meat,,,,,,,,21.6,Pig Meat,1.5,1.7,2.9,0.3,0.3,0.2,0.3,,
+30,Potatoes,,,,,,,,0.9000000000000001,Potatoes,0.0,0.2,0.0,0.0,0.1,0.0,0.0,,
+31,Poultry Meat,,,,,,,,18.3,Poultry Meat,2.5,0.7,1.8,0.4,0.3,0.2,0.2,,
+32,Rapeseed Oil,,,,,,,,11.100000000000001,Rapeseed Oil,0.2,2.3,0.0,0.2,0.2,0.0,0.8,,
+33,Rice,,,,,,,,12.0,Rice,0.0,3.6,0.0,0.1,0.1,0.1,0.1,,
+34,Root Vegetables,,,,,,,,0.9000000000000001,Root Vegetables,0.0,0.2,0.0,0.0,0.1,0.0,0.0,,
+35,Shrimps (farmed),,,,,,,,35.4,Shrimps (farmed),0.2,8.4,2.5,0.0,0.2,0.2,0.3,,
+36,Soybean Oil,,,,,,,,18.0,Soybean Oil,3.1,1.5,0.0,0.3,0.3,0.0,0.8,,
+37,Soymilk,,,,,,,,3.0,Soymilk,0.2,0.1,0.0,0.2,0.1,0.3,0.1,,
+38,Sunflower Oil,,,,,,,,10.500000000000002,Sunflower Oil,0.1,2.1,0.0,0.2,0.2,0.0,0.9,,
+39,Tofu,,,,,,,,9.0,Tofu,1.0,0.5,0.0,0.8,0.2,0.3,0.2,,
+40,Tomatoes,,,,,,,,4.200000000000001,Tomatoes,0.4,0.7,0.0,0.0,0.2,0.0,0.1,,
+41,Wheat & Rye,,,,,,,,4.200000000000001,Wheat & Rye,0.1,0.8,0.0,0.2,0.1,0.1,0.1,,
+42,Wine,,,,,,,,4.2,Wine,-0.1,0.6,0.0,0.1,0.1,0.0,0.7,,
+0,Meat products,,,,,,,,7.42,,,,,,,,,Meat products,742.0
+1,"Biscuits, sweet",,,,,,,,2.16,,,,,,,,,"Biscuits, sweet",216.0
+2,Yogurt,,,,,,,,2.4,,,,,,,,,Yogurt,240.0
+3,Cakes and pastry,,,,,,,,3.26,,,,,,,,,Cakes and pastry,326.0
+4,Soft drinks,,,,,,,,2.84,,,,,,,,,Soft drinks,284.0
+5,Pasta and semolina,,,,,,,,2.68,,,,,,,,,Pasta and semolina,268.0
+6,Fish and frog products,,,,,,,,5.33,,,,,,,,,Fish and frog products,533.0
+7,Poultry,,,,,,,,2.62,,,,,,,,,Poultry,262.0
+8,Sweet rolls and brioches,,,,,,,,0.57,,,,,,,,,Sweet rolls and brioches,57.0
+9,Rice and other grains,,,,,,,,5.4,,,,,,,,,Rice and other grains,540.0
+10,"Pizzas, crepes, and savory pies",,,,,,,,5.05,,,,,,,,,"Pizzas, crepes, and savory pies",505.0
+11,Chips and snacks,,,,,,,,1.16,,,,,,,,,Chips and snacks,116.0
+12,Juices and nectars,,,,,,,,2.19,,,,,,,,,Juices and nectars,219.0
+13,Chocolate and chocolate products,,,,,,,,3.1,,,,,,,,,Chocolate and chocolate products,310.0
+14,White cheese,,,,,,,,2.96,,,,,,,,,White cheese,296.0
+15,Pasta or cereal-based dishes,,,,,,,,4.24,,,,,,,,,Pasta or cereal-based dishes,424.0
+16,Processed vegetables,,,,,,,,2.17,,,,,,,,,Processed vegetables,217.0
+17,Breakfast cereals and cereal bars,,,,,,,,2.97,,,,,,,,,Breakfast cereals and cereal bars,297.0
+18,"Sugars, honeys, syrups",,,,,,,,0.9,,,,,,,,,"Sugars, honeys, syrups",90.0
+19,Milk-based desserts,,,,,,,,2.27,,,,,,,,,Milk-based desserts,227.0
+20,Starchy tubers,,,,,,,,3.23,,,,,,,,,Starchy tubers,323.0
+21,Non-chocolate candy,,,,,,,,2.53,,,,,,,,,Non-chocolate candy,253.0
+22,"Hard, semi-hard or soft cheese",,,,,,,,10.71,,,,,,,,,"Hard, semi-hard or soft cheese",1071.0
+23,Milk,,,,,,,,1.72,,,,,,,,,Milk,172.0
+24,Meat or poultry-based dishes,,,,,,,,5.29,,,,,,,,,Meat or poultry-based dishes,529.0
+25,Eggs and egg products,,,,,,,,4.49,,,,,,,,,Eggs and egg products,449.0
+26,Breads,,,,,,,,6.25,,,,,,,,,Breads,625.0
+27,Rusks and unleavened breads,,,,,,,,1.31,,,,,,,,,Rusks and unleavened breads,131.0
+28,Fruit compotes,,,,,,,,1.94,,,,,,,,,Fruit compotes,194.0
+29,"Fish and frogs, unprocessed",,,,,,,,1.36,,,,,,,,,"Fish and frogs, unprocessed",136.0
+30,Processed or uncured cheese,,,,,,,,6.54,,,,,,,,,Processed or uncured cheese,654.0
+31,Condiments and savory sauces,,,,,,,,2.11,,,,,,,,,Condiments and savory sauces,211.0
+32,Cream and similar,,,,,,,,2.56,,,,,,,,,Cream and similar,256.0
+33,"Soups, ready-to-eat",,,,,,,,2.74,,,,,,,,,"Soups, ready-to-eat",274.0
