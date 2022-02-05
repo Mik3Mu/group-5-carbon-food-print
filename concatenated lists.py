@@ -1,5 +1,6 @@
-# Import Pandas
+# Import modules
 import pandas as pd
+import numpy as np
 
 # Load Data 
 
@@ -100,15 +101,20 @@ tomatoes = pd.DataFrame(columns=["Product", "Type", "Country of Origin",
 #Adding the information from Our World in Data
 #open the data:
 data2 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Our World in Data/OurWorldInData_food-footprints.csv"
-df2 = pd.read_csv(data2)
+df_OWID = pd.read_csv(data2)
 
 #delete unneccessary columns and rename "Entity" to "Product"
-df_no_year = df2.drop("Year", axis = 1)
-df_OWID = df_no_year.drop("Code", axis = 1)
 df_OWID["Product"] = df_OWID["Entity"]
 
 #adding total CO2-eq
 df_OWID["CO2_Equivalent_per_Kilo"] = df_OWID.sum(axis=1)
+df_OWID = df_OWID.loc[:, df_OWID.columns.intersection(['Product','CO2_Equivalent_per_Kilo'])]
+df_OWID["Type"]=("Fruit", "Fruit", "Grain", "Meat", "Meat", "Sweets", "Fruit", "Vegetable", "Sweets", 
+                 "Vegetable", "Dairy", "Fruit", "Drinks", "Sweets", "Eggs", "Fish", "Ingredients", 
+                 "Meat","Vegetable", "Dairy", "Ingredients", "Grains", "Ingredients", "Vegetable", 
+                 "Fruit","nan", "Vegetable", "Ingredient", "Vegetable", "Meat", "Vegetable", 
+                 "Meat","Ingredients", "Grains", "Vegetable", "Fish", "Ingredients", "Substitute", 
+                 "Ingredients", "Substitute", "Vegetable", "Grains", "Drinks")
 
 #Adding data from supporting information of Drewnoski et al., Am. J. of Clinical Nutrition, 2015
 #open data
@@ -118,14 +124,47 @@ df3 = pd.read_excel(data3)
 #adjusting the DataFrame
 df3["CO2_Equivalent_per_Kilo"] = df3["GHGEs per 100g (Median)"] / 100
 df3["Product"] = df3["Food group"]
-df_Drewnowski = df3.drop(["GHGEs per 100g (Median)"], axis=1)
+df_Drewnowski = df3.loc[:, df3.columns.intersection(['Product','CO2_Equivalent_per_Kilo'])]
+df_Drewnowski["Type"]=("Meat", "Pastries", "Dairy", "Pastries", "Drinks", "nan", "Fish", "Meat", 
+                       "Pastries", "Grains", "Dish", "Sweets", "Drinks", "Sweets", "Dairy",
+                       "Dish", "Vegetable", "Grains", "Sweets", "Dairy", "Vegetable", "Sweets", 
+                       "Dairy", "Dairy", "Meat", "Eggs", "Pastries", "Pastries", "Fruit", "Fish",
+                       "Daury", "Dish", "Dairy", "Dish")
 
+#Creating a DataFrame for Data on Tomato Ketchup from the following source: 
+    #Wohner, Bernhard, et al., Science of the Total Environment 738 (2020): 139846.
+ketchup_data = [
+    ["Ketchup, 450g", "Vegetable", False, "Plastic", "processed, sauce", 1.25],
+    ["Ketchup, 380g", "Vegetable", True, "Plastic", "processed, sauce", 1.7],
+    ["Ketchup, 550g", "Vegetable", True, "Plastic", "processed, sauce", 1.31 ],
+    ["Ketchup, 480g", "Vegetable", True, "Glas", "processed, sauce", 1.78]
+    ]
 
+ketchup = pd.DataFrame(columns=["Product", "Type", 
+                           "Organic", "Type of Packaging", "Processed", 
+                           "CO2_Equivalent_per_Kilo"],data=ketchup_data)
 
+#Creating a DataFrame for Carbonated Softdrinks from the following source:
+    #Amienyo, David, et al.,The International Journal of Life Cycle Assessment 18.1 (2013): 77-92.
+drinks_data = [
+    ["Cola, 0.33l", "Drinks", "Aluminium can", 5.7],
+    ["Cola, 0.5l", "Drinks", "Plastic", 3.9],
+    ["Cola, 2l", "Drinks", "Plastic", 2.5],
+    ["Coca Cola, 0.33l", "Drinks", "Aluminium can", 5.15],
+    ["Coca Cola, 2l", "Drinks", "Plastic", 2.5],
+    ["Carbonated drink,ambient temp., 0.33l", "Drinks", "Aluminium can", 3.12],
+    ["Carbonated drink,ambient temp., 0.5l", "Drinks", "Plastic", 2.93],
+    ["Carbonated drink,ambient temp., 2l", "Drinks", "Plastic", 1.51],
+    ["Carbonated drink,chilled, 0.33l", "Drinks", "Aluminium can", 4.67],
+    ["Carbonated drink,chilled, 0.5l", "Drinks", "Plastic", 3.88],
+    ]
+drinks = pd.DataFrame(columns=["Product", "Type", 
+                           "Type of Packaging", 
+                           "CO2_Equivalent_per_Kilo"],data=drinks_data)
 
 #concatenating the datasets
-concatenated = pd.concat([df, tomatoes, df_OWID, df3])
-
+concatenated = pd.concat([df, tomatoes, df_OWID, df_Drewnowski, ketchup, drinks])
+concatenated.replace("nan", np.nan, inplace=True)
 
 #saving the concatenated data for further use
 filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/organized lists.csv"
