@@ -1,99 +1,101 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[18]:
-
-
 # Import Pandas
 import pandas as pd
 
 # Load Data 
 
 # Creating Column Names for the Table (("Energy Used #Out for Now ; Aswell as Energy Usage; Water Usage;"))
-df = pd.DataFrame(columns=["Product", "Type", "Unique_Aspect", "CO2_Equivalent_per_Kilo","Score"])
+df = pd.DataFrame(columns=["Product", "Type", 
+                           "Country of Origin", "Method of Transportation",
+                           "Organic", "Seasonal", 
+                           "Type of Packaging", "Processed",
+                           "CO2_Equivalent_per_Kilo"])
 
 # The CO2 Equivalent that is being used was measured according to the "Carbon Foot Print - Value" at a generic German supermarket checkout in 2019 by the Institute of Energy and Environmental Research in Heidelberg "ifeu"
 
 # Adding the Data: 5 of selected types each, often with their comparable product
 IFEU_study_CFP_Germany2020 = [
-    ["Avocado", "Fruit", "from Peru", 0.8,"A"],
-    ["Avocado", "Fruit", "from Peru Biological", 0.8,"A"],
-    ["Strawberries", "Fruit", "Winter Season", 3.4, "C"],
-    ["Strawberries", "Fruit", "Normal season regional", 0.3,"A"],
-    ["Pineapple", "Fruit", "by Ship", 0.6, "A"],
-    ["Pineapple", "Fruit", "by Plane", 15.1, "E"],
-    ["Apples", "Fruit", "from New Zealand", 0.8, "A"],
-    ["Apples", "Fruit", "mean Regional and Seasonal", 0.3, "A"],
-    ["Peach", "Fruit", "Fresh",0.2, "A"],
-    ["Peach", "Fruit", "Can", 1.6, "B"],
-    ["Broccoli", "Vegetable", "Fresh", 0.3, "A"],
-    ["Broccoli", "Vegetable", "Frozen",0.3, "A"],
-    ["Beans", "Vegetable", "Fresh", 0.8, "A"],
-    ["Beans", "Vegetable", "Can", 1.3, "B"],
-    ["Champignon", "Vegetable", "Fresh", 1.3, "B"],
-    ["Champignon", "Vegetable", "Can", 2.4, "B"],
-    ["Tomatoes", "Vegetable", "Paste", 4.3, "C"],
-    ["Tomatoes", "Vegetable", "Can", 1.8, "B"],
-    ["Carrots", "Vegetable", "Fresh", 0.2, "A"],
-    ["Carrots", "Vegetable", "Biological", 0.2, "A"],
-    ["Butter", "Dairy", "Conventional", 9.0, "D"],
-    ["Butter", "Dairy", "Biological", 11.5, "E"],
-    ["Cheese", "Dairy", "mean Conventional", 5.7, "D"],
-    ["Cheese", "Dairy", "mean Biological", 7.2, "D"],
-    ["Milk", "Dairy", "Biological", 1.7, "B"],
-    ["Oat Milk", "Dairy ", "Substitute", 0.3, "A"],
-    ["Cream", "Dairy", "Biological", 5.3, "D"],
-    ["Oat Cream", "Dairy", "Substitute", 0.6, "A"],
-    ["Curd", "Dairy", "Biological", 4.1, "C"],
-    ["Soja Curd", "Dairy", "Substitute", 0.7, "A"],
-    ["Shrimp", "Fish", "Frozen", 12.5, "E"],
-    ["Salmon", "Fish", "Aquaculture", 5.1, "D"],
-    ["Beef", "Meat", "mean Conventional", 13.6, "E"],
-    ["Beef", "Meat", "Biological", 15.1, "E"],
-    ["Pork", "Meat", "mean Conventional", 4.6, "C"],
-    ["Pork", "Meat", "Biological", 5.2, "D"],
-    ["Tofu", "Meat", "Substitute", 1.0, "A"],
-    ["Tempeh", "Meat", "Substitue", 0.7, "A"],
-    ["Venison", "Meat", "From Deer", 11.5, "E"],
-    ["Veggie Patties", "Meat", "mean Substitutes", 1.45, "B"],
-    ["Brown Bread", "Pastries", "Conventional", 0.6, "A"],
-    ["Brown Bread", "Pastries", "Biological", 0.6, "A"],
-    ["Honey", "Sweets", "Glas", 2.0, "B"],
-    ["Olive Oil", "Ingredient", "Glas", 3.2, "C"],
-    ["Coconut Oil", "Ingredient", "Glas", 2.3, "B"],
-    ["Beet Sugar", "Ingredient", "Conventional", 0.7, "A"],
-    ["Beet Sugar", "Ingredient", "Biological", 0.5, "A"],
-    ["Peanuts with Shell", "Ingredient", "Conventional", 0.8, "A"],
-    ["Peanutbutter", "Sweets", "Glas", 2.0, "B"],
-    ["Beer 0.5L", "Drinks", "Glas", 0.9, "A"],
-    ["Beer 0.5L", "Drinks", "Can", 1.0, "A"],
-    ["Lemonade 0.75L", "Drinks", "Plastic", 0.4, "A"],
-    ["Sparkling Water 0.7L", "Drinks", "Glas", 0.2, "A"],
-    ["Tap Water", "Drinks", "Sink", 0.0, "A"],
-    ["Wine 0.75L", "Drinks", "Glas", 1.0, "A"],
-    ["Coffee Powder", "Drinks", "Conventional", 5.6, "D"],
-    ["Apple Juice 1L", "Drinks", "Glas", 0.4, "A"],
-    ["Orange Juice 1L", "Drinks", "Carton", 0.7, "A"],
-
+    ["Avocado", "Fruit", "Peru", "nan", False, "nan", "nan", False, 0.8],
+    ["Avocado", "Fruit", "Peru", "nan", True, "nan", "nan", False, 0.8],
+    ["Strawberries", "Fruit", "nan", "nan", "nan", False, "nan", "unprocessed", 3.4],
+    ["Strawberries", "Fruit", "Germany", "nan", "nan", True, "nan", "unprocessed", 0.3],
+    ["Pineapple", "Fruit", "nan", "Ship", "nan", "nan", "nan", "unprocessed", 0.6],
+    ["Pineapple", "Fruit","nan", "Plane", "nan", "nan", "nan", "unprocessed", 15.1],
+    ["Apples", "Fruit", "New Zealand", "nan", "nan", False, "nan", "unprocessed", 0.8],
+    ["Apples", "Fruit", "Germany", "nan", "nan", True, "nan", "unprocessed", 0.3],
+    ["Peach", "Fruit", "nan", "nan", "nan", "nan", "unpackaged", "unprocessed", 0.2],
+    ["Peach", "Fruit", "nan", "nan", "nan", "nan", "Can", "canned", 1.6],
+    ["Broccoli", "Vegetable", "nan", "nan", "nan", "nan", "unpackaged", "unprocessed",0.3],
+    ["Broccoli", "Vegetable", "nan", "nan", "nan", "nan", "Plastic", "frozen",0.3],
+    ["Beans", "Vegetable", "nan", "nan", "nan", "nan", "nan", "unprocessed",0.8],
+    ["Beans", "Vegetable", "nan", "nan", "nan", "nan", "Can", "canned", 1.3],
+    ["Champignon", "Vegetable", "nan", "nan", "nan", True, "nan", "unprocessed", 1.3],
+    ["Champignon", "Vegetable", "nan", "nan", "nan", True, "Can", "canned", 2.4],
+    ["Tomatoes", "Vegetable", "nan", "nan", "nan", "nan", "Metal tube", "Paste", 4.3],
+    ["Tomatoes", "Vegetable", "nan", "nan", "nan", "nan",  "Can", "canned", 1.8],
+    ["Carrots", "Vegetable", "nan", "nan", False, "nan", "nan", "unprocessed", 0.2],
+    ["Carrots", "Vegetable", "nan", "nan", True, "nan", "nan",  "unprocessed", 0.2],
+    ["Butter", "Dairy", "nan", "nan", False, "nan", "Plastic", "processed", 9.0],
+    ["Butter", "Dairy", "nan", "nan", True, "nan", "Plastic", "processed", 11.5],
+    ["Cheese", "Dairy", "nan", "nan", False, "nan", "nan", "processed", 5.7],
+    ["Cheese", "Dairy",  "nan", "nan", True, "nan", "nan", "processed", 7.2],
+    ["Milk", "Dairy", "nan", "nan", True, "nan", "Carton", "unprocessed", 1.7],
+    ["Oat Milk", "Substitute", "nan", "nan", "nan", "nan", "nan", "processed", 0.3],
+    ["Cream", "Dairy", "nan", "nan", True, "nan", "nan", "processed", 5.3],
+    ["Oat Cream", "Substitute", "nan", "nan", "nan", "nan", "nan", "processed", 0.6],
+    ["Curd", "Dairy",  "nan", "nan", True, "nan", "nan", "processed", 4.1],
+    ["Soja Curd", "Substitute", "nan", "nan", "nan", "nan", "nan", "processed", 0.7],
+    ["Shrimp", "Fish", "nan", "nan", "nan", "nan", "nan", "frozen", 12.5],
+    ["Salmon from Aquaculture", "Fish", "nan", "nan", "nan", "nan", "nan", "unprocessed", 5.1],
+    ["Beef", "Meat", "nan", "nan", False, "nan", "nan", "unprocessed", 13.6],
+    ["Beef", "Meat", "nan", "nan", True, "nan", "nan", "unprocessed", 15.1],
+    ["Pork", "Meat",  "nan", "nan", False, "nan", "nan", "unprocessed", 4.6],
+    ["Pork", "Meat", "nan", "nan", True, "nan", "nan", "unprocessed", 5.2],
+    ["Tofu", "Substitute", "nan", "nan", "nan", "nan", "Plastic", "processed", 1.0],
+    ["Tempeh", "Substitute", "nan", "nan", "nan", "nan", "Plastic", "processed", 0.7],
+    ["Venison from Deer", "Meat", "nan", "nan", "nan", "nan", "nan", "unprocessed", 11.5],
+    ["Veggie Patties", "Substitute", "nan", "nan", "nan", "nan", "Plastic", "processed", 1.45],
+    ["Brown Bread", "Pastries", "Germany", "nan", False , "nan", "nan", "unprocessed", 0.6],
+    ["Brown Bread", "Pastries", "Germany", "nan", False , "nan", "nan", "unprocessed", 0.6],
+    ["Honey", "Sweets", "nan", "nan", "nan", "nan", "Glas", "unprocessed", 2.0],
+    ["Olive Oil", "Ingredient", "nan", "nan", "nan", "nan", "Glas", "unprocessed", 3.2],
+    ["Coconut Oil", "Ingredient",  "nan", "nan", "nan", "nan", "Glas", "unprocessed", 2.3],
+    ["Beet Sugar", "Ingredient",  "nan", "nan", False, "nan", "Paper", "unprocessed", 0.7],
+    ["Beet Sugar", "Ingredient", "nan", "nan", True, "nan", "Paper", "unprocessed", 0.5],
+    ["Peanuts with Shell", "Ingredient", "nan", "nan", False, "nan", "nan", "unprocessed",0.8],
+    ["Peanutbutter", "Sweets","nan", "nan", "nan", "nan", "Glas", "processed", 2.0],
+    ["Beer 0.5L", "Drinks", "nan", "nan", "nan", "nan", "Glas", "processed", 0.9],
+    ["Beer 0.5L", "Drinks", "nan", "nan", "nan", "nan", "Can", "processed", 1.0],
+    ["Lemonade 0.75L", "Drinks", "nan", "nan", "nan", "nan", "Plastic", "processed", 0.4],
+    ["Sparkling Water 0.7L", "Drinks", "Germany", True, "nan", "nan", "Glas", "processed", 0.2],
+    ["Tap Water", "Drinks", "nan", "nan", "Germany", True, "unpackaged", "unprocessed", 0.0],
+    ["Wine 0.75L", "Drinks", "nan", "nan", "nan", True, "Glas", "processed", 1.0],
+    ["Coffee Powder", "Drinks", "nan", "nan", False, True, "Plastic", "unprocessed", 5.6],
+    ["Apple Juice 1L", "Drinks", "nan", "nan", "nan", True, "Glas", "processed", 0.4],
+    ["Orange Juice 1L", "Drinks","nan", "nan", "nan", True, "Carton", "processed", 0.7]
 ]
 
-df = pd.DataFrame(columns=["Product", "Type", "Unique_Aspect", "CO2_Equivalent_per_Kilo","Score"],data=IFEU_study_CFP_Germany2020)
-df
-df = df.drop(["Score"],axis=1)
-df
+df = pd.DataFrame(columns=["Product", "Type", "Country of Origin", 
+                           "Method of Transportation", 
+                           "Organic", "Seasonal", 
+                           "Type of Packaging", "Processed", 
+                           "CO2_Equivalent_per_Kilo"],data=IFEU_study_CFP_Germany2020)
 
 #Information on Tomatoes (source: https://www.umweltdialog.de/de/verbraucher/lebensmittel/2015/Klimakiller-Tomaten-.php)
 tomatoe_values = [
-    ["Tomatoes", "Vegetable", "Conventional production in heated greenhouse, local, out of season", 9.3, "nan"],
-    ["Tomatoes", "Vegetable", "Organic production in heated greenhouse, local, out of season", 9.2, "nan"],
-    ["Tomatoes", "Vegetable", "From Canaries, transport by flight", 7.2, "nan"],
-    ["Tomatoes", "Vegetable", "Conventional production in non-heated greenhouse, local, out of season", 2.3, "nan"],
-    ["Tomatoes", "Vegetable", "From Spain, open air production", 0.6, "nan"],
-    ["Tomatoes", "Vegetable", "Conventional regional production during season", 0.085, "nan"],
-    ["Tomatoes", "Vegetable", "Organic regional production during season", 0.035, "nan"]
+    ["Tomatoes, heated greenhouse", "Vegetable", "Germany", "nan", False, False, "nan", "unprocessed", 9.3],
+    ["Tomatoes, heated greenhouse", "Vegetable", "Germany", "nan", True, False, "nan", "unprocessed", 9.2],
+    ["Tomatoes", "Vegetable", "Canaries", "Plane", "nan", "nan", "nan", "unprocessed", 7.2],
+    ["Tomatoes, non-heated greenhouse", "Vegetable","Germany", "nan", False, False, "nan", "unprocessed", 2.3],
+    ["Tomatoes, open air", "Vegetable", "Spain", "nan", "nan", "nan", "nan", "unprocessed", 0.6],
+    ["Tomatoes", "Vegetable", "Germany", "nan", False, True, "nan", "unprocessed", 0.085],
+    ["Tomatoes", "Vegetable", "Germany", "nan", True, True, "nan", "unprocessed", 0.035]
     ]
 
-tomatoes = pd.DataFrame(columns=["Product", "Type", "Unique_Aspect", "CO2_Equivalent_per_Kilo","Score"],data=tomatoe_values)
+tomatoes = pd.DataFrame(columns=["Product", "Type", "Country of Origin", 
+                           "Method of Transportation", 
+                           "Organic", "Seasonal", 
+                           "Type of Packaging", "Processed", 
+                           "CO2_Equivalent_per_Kilo"],data=tomatoe_values)
 
 #Adding the information from Our World in Data
 #open the data:
@@ -124,40 +126,7 @@ df_Drewnowski = df3.drop(["GHGEs per 100g (Median)"], axis=1)
 #concatenating the datasets
 concatenated = pd.concat([df, tomatoes, df_OWID, df3])
 
-# In[19]:
-
-
-# The Score is devided in 5 categories : A , B , C , D , E
-# A is True if "CO2/kg" <= 1
-# B is True if "CO2/kg" >= {3,1}
-# C is True if "CO2/kg" >= {5,3}
-# D is True if "CO2/kg" >= {10,5}
-# E is True if "CO2/kg" >  10
-
-def scoring(CO2):
-    if CO2 <= 1:
-        score = "A"
-    elif CO2 <= 3:
-        score = "B"   
-    elif CO2 <= 5:
-        score = "C"
-    elif CO2 <= 10:
-        score = "D"
-    else: 
-        score = "E"
-    return score
-
-
-# In[20]:
-
-
-concatenated["Score"] = [
-    scoring(CO2)
-    for CO2 in concatenated.CO2_Equivalent_per_Kilo
-    ]
-df
-
 
 #saving the concatenated data for further use
-filename = "C:/Users/carol/Documents/TechLabs/group/group-5-carbon-food-print/concatenated lists.csv"
+filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/organized lists.csv"
 concatenated.to_csv(filename)
