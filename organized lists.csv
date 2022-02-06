@@ -1,0 +1,157 @@
+,Product,Type,Country of Origin,Method of Transportation,Organic,Seasonal,Type of Packaging,Processed,CO2_Equivalent_per_Kilo
+0,Avocado,Fruit,Peru,,False,,,False,0.8
+1,Avocado,Fruit,Peru,,True,,,False,0.8
+2,Strawberries,Fruit,,,,False,,unprocessed,3.4
+3,Strawberries,Fruit,Germany,,,True,,unprocessed,0.3
+4,Pineapple,Fruit,,Ship,,,,unprocessed,0.6
+5,Pineapple,Fruit,,Plane,,,,unprocessed,15.1
+6,Apples,Fruit,New Zealand,,,False,,unprocessed,0.8
+7,Apples,Fruit,Germany,,,True,,unprocessed,0.3
+8,Peach,Fruit,,,,,unpackaged,unprocessed,0.2
+9,Peach,Fruit,,,,,Can,canned,1.6
+10,Broccoli,Vegetable,,,,,unpackaged,unprocessed,0.3
+11,Broccoli,Vegetable,,,,,Plastic,frozen,0.3
+12,Beans,Vegetable,,,,,,unprocessed,0.8
+13,Beans,Vegetable,,,,,Can,canned,1.3
+14,Champignon,Vegetable,,,,True,,unprocessed,1.3
+15,Champignon,Vegetable,,,,True,Can,canned,2.4
+16,Tomatoes,Vegetable,,,,,Metal tube,Paste,4.3
+17,Tomatoes,Vegetable,,,,,Can,canned,1.8
+18,Carrots,Vegetable,,,False,,,unprocessed,0.2
+19,Carrots,Vegetable,,,True,,,unprocessed,0.2
+20,Butter,Dairy,,,False,,Plastic,processed,9.0
+21,Butter,Dairy,,,True,,Plastic,processed,11.5
+22,Cheese,Dairy,,,False,,,processed,5.7
+23,Cheese,Dairy,,,True,,,processed,7.2
+24,Milk,Dairy,,,True,,Carton,unprocessed,1.7
+25,Oat Milk,Substitute,,,,,,processed,0.3
+26,Cream,Dairy,,,True,,,processed,5.3
+27,Oat Cream,Substitute,,,,,,processed,0.6
+28,Curd,Dairy,,,True,,,processed,4.1
+29,Soja Curd,Substitute,,,,,,processed,0.7
+30,Shrimp,Fish,,,,,,frozen,12.5
+31,Salmon from Aquaculture,Fish,,,,,,unprocessed,5.1
+32,Beef,Meat,,,False,,,unprocessed,13.6
+33,Beef,Meat,,,True,,,unprocessed,15.1
+34,Pork,Meat,,,False,,,unprocessed,4.6
+35,Pork,Meat,,,True,,,unprocessed,5.2
+36,Tofu,Substitute,,,,,Plastic,processed,1.0
+37,Tempeh,Substitute,,,,,Plastic,processed,0.7
+38,Venison from Deer,Meat,,,,,,unprocessed,11.5
+39,Veggie Patties,Substitute,,,,,Plastic,processed,1.45
+40,Brown Bread,Pastries,Germany,,False,,,unprocessed,0.6
+41,Brown Bread,Pastries,Germany,,False,,,unprocessed,0.6
+42,Honey,Sweets,,,,,Glas,unprocessed,2.0
+43,Olive Oil,Ingredient,,,,,Glas,unprocessed,3.2
+44,Coconut Oil,Ingredient,,,,,Glas,unprocessed,2.3
+45,Beet Sugar,Ingredient,,,False,,Paper,unprocessed,0.7
+46,Beet Sugar,Ingredient,,,True,,Paper,unprocessed,0.5
+47,Peanuts with Shell,Ingredient,,,False,,,unprocessed,0.8
+48,Peanutbutter,Sweets,,,,,Glas,processed,2.0
+49,Beer 0.5L,Drinks,,,,,Glas,processed,0.9
+50,Beer 0.5L,Drinks,,,,,Can,processed,1.0
+51,Lemonade 0.75L,Drinks,,,,,Plastic,processed,0.4
+52,Sparkling Water 0.7L,Drinks,Germany,True,,,Glas,processed,0.2
+53,Tap Water,Drinks,,,Germany,True,unpackaged,unprocessed,0.0
+54,Wine 0.75L,Drinks,,,,True,Glas,processed,1.0
+55,Coffee Powder,Drinks,,,False,True,Plastic,unprocessed,5.6
+56,Apple Juice 1L,Drinks,,,,True,Glas,processed,0.4
+57,Orange Juice 1L,Drinks,,,,True,Carton,processed,0.7
+0,"Tomatoes, heated greenhouse",Vegetable,Germany,,False,False,,unprocessed,9.3
+1,"Tomatoes, heated greenhouse",Vegetable,Germany,,True,False,,unprocessed,9.2
+2,Tomatoes,Vegetable,Canaries,Plane,,,,unprocessed,7.2
+3,"Tomatoes, non-heated greenhouse",Vegetable,Germany,,False,False,,unprocessed,2.3
+4,"Tomatoes, open air",Vegetable,Spain,,,,,unprocessed,0.6
+5,Tomatoes,Vegetable,Germany,,False,True,,unprocessed,0.085
+6,Tomatoes,Vegetable,Germany,,True,True,,unprocessed,0.035
+0,Apples,Fruit,,,,,,,2018.3
+1,Bananas,Fruit,,,,,,,2018.8
+2,Barley,Grain,,,,,,,2019.1000000000001
+3,Beef (beef herd),Meat,,,,,,,2077.5999999999995
+4,Beef (dairy herd),Meat,,,,,,,2039.1
+5,Beet Sugar,Sweets,,,,,,,2019.3999999999999
+6,Berries & Grapes,Fruit,,,,,,,2019.1000000000001
+7,Brassicas,Vegetable,,,,,,,2018.3999999999999
+8,Cane Sugar,Sweets,,,,,,,2020.6
+9,Cassava,Vegetable,,,,,,,2018.8999999999999
+10,Cheese,Dairy,,,,,,,2039.2
+11,Citrus Fruit,Fruit,,,,,,,2018.3
+12,Coffee,Drinks,,,,,,,2034.4999999999998
+13,Dark Chocolate,Sweets,,,,,,,2036.7
+14,Eggs,Eggs,,,,,,,2022.5
+15,Fish (farmed),Fish,,,,,,,2023.1
+16,Groundnuts,Ingredients,,,,,,,2020.3999999999999
+17,Lamb & Mutton,Meat,,,,,,,2042.5
+18,Maize,Vegetable,,,,,,,2019.1
+19,Milk,Dairy,,,,,,,2020.8
+20,Nuts,Ingredients,,,,,,,2018.1999999999998
+21,Oatmeal,Grains,,,,,,,2019.6
+22,Olive Oil,Ingredients,,,,,,,2024.0000000000002
+23,Onions & Leeks,Vegetable,,,,,,,2018.3
+24,Other Fruit,Fruit,,,,,,,2018.7
+25,Other Pulses,,,,,,,,2019.6
+26,Other Vegetables,Vegetable,,,,,,,2018.5
+27,Palm Oil,Ingredient,,,,,,,2025.6000000000001
+28,Peas,Vegetable,,,,,,,2018.8
+29,Pig Meat,Meat,,,,,,,2025.2
+30,Potatoes,Vegetable,,,,,,,2018.3
+31,Poultry Meat,Meat,,,,,,,2024.1000000000001
+32,Rapeseed Oil,Ingredients,,,,,,,2021.7
+33,Rice,Grains,,,,,,,2021.9999999999998
+34,Root Vegetables,Vegetable,,,,,,,2018.3
+35,Shrimps (farmed),Fish,,,,,,,2029.8
+36,Soybean Oil,Ingredients,,,,,,,2023.9999999999998
+37,Soymilk,Substitute,,,,,,,2018.9999999999998
+38,Sunflower Oil,Ingredients,,,,,,,2021.5000000000002
+39,Tofu,Substitute,,,,,,,2021.0
+40,Tomatoes,Vegetable,,,,,,,2019.3999999999999
+41,Wheat & Rye,Grains,,,,,,,2019.4
+42,Wine,Drinks,,,,,,,2019.4
+0,Meat products,Meat,,,,,,,7.42
+1,"Biscuits, sweet",Pastries,,,,,,,2.16
+2,Yogurt,Dairy,,,,,,,2.4
+3,Cakes and pastry,Pastries,,,,,,,3.26
+4,Soft drinks,Drinks,,,,,,,2.84
+5,Pasta and semolina,,,,,,,,2.68
+6,Fish and frog products,Fish,,,,,,,5.33
+7,Poultry,Meat,,,,,,,2.62
+8,Sweet rolls and brioches,Pastries,,,,,,,0.57
+9,Rice and other grains,Grains,,,,,,,5.4
+10,"Pizzas, crepes, and savory pies",Dish,,,,,,,5.05
+11,Chips and snacks,Sweets,,,,,,,1.16
+12,Juices and nectars,Drinks,,,,,,,2.19
+13,Chocolate and chocolate products,Sweets,,,,,,,3.1
+14,White cheese,Dairy,,,,,,,2.96
+15,Pasta or cereal-based dishes,Dish,,,,,,,4.24
+16,Processed vegetables,Vegetable,,,,,,,2.17
+17,Breakfast cereals and cereal bars,Grains,,,,,,,2.97
+18,"Sugars, honeys, syrups",Sweets,,,,,,,0.9
+19,Milk-based desserts,Dairy,,,,,,,2.27
+20,Starchy tubers,Vegetable,,,,,,,3.23
+21,Non-chocolate candy,Sweets,,,,,,,2.53
+22,"Hard, semi-hard or soft cheese",Dairy,,,,,,,10.71
+23,Milk,Dairy,,,,,,,1.72
+24,Meat or poultry-based dishes,Meat,,,,,,,5.29
+25,Eggs and egg products,Eggs,,,,,,,4.49
+26,Breads,Pastries,,,,,,,6.25
+27,Rusks and unleavened breads,Pastries,,,,,,,1.31
+28,Fruit compotes,Fruit,,,,,,,1.94
+29,"Fish and frogs, unprocessed",Fish,,,,,,,1.36
+30,Processed or uncured cheese,Daury,,,,,,,6.54
+31,Condiments and savory sauces,Dish,,,,,,,2.11
+32,Cream and similar,Dairy,,,,,,,2.56
+33,"Soups, ready-to-eat",Dish,,,,,,,2.74
+0,"Ketchup, 450g",Vegetable,,,False,,Plastic,"processed, sauce",1.25
+1,"Ketchup, 380g",Vegetable,,,True,,Plastic,"processed, sauce",1.7
+2,"Ketchup, 550g",Vegetable,,,True,,Plastic,"processed, sauce",1.31
+3,"Ketchup, 480g",Vegetable,,,True,,Glas,"processed, sauce",1.78
+0,"Cola, 0.33l",Drinks,,,,,Aluminium can,,5.7
+1,"Cola, 0.5l",Drinks,,,,,Plastic,,3.9
+2,"Cola, 2l",Drinks,,,,,Plastic,,2.5
+3,"Coca Cola, 0.33l",Drinks,,,,,Aluminium can,,5.15
+4,"Coca Cola, 2l",Drinks,,,,,Plastic,,2.5
+5,"Carbonated drink,ambient temp., 0.33l",Drinks,,,,,Aluminium can,,3.12
+6,"Carbonated drink,ambient temp., 0.5l",Drinks,,,,,Plastic,,2.93
+7,"Carbonated drink,ambient temp., 2l",Drinks,,,,,Plastic,,1.51
+8,"Carbonated drink,chilled, 0.33l",Drinks,,,,,Aluminium can,,4.67
+9,"Carbonated drink,chilled, 0.5l",Drinks,,,,,Plastic,,3.88
