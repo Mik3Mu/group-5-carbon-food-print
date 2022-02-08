@@ -2,14 +2,6 @@
 import pandas as pd
 import numpy as np
 
-# Load Data 
-
-# Creating Column Names for the Table (("Energy Used #Out for Now ; Aswell as Energy Usage; Water Usage;"))
-df = pd.DataFrame(columns=["Product", "Type", 
-                           "Country of Origin", "Method of Transportation",
-                           "Organic", "Seasonal", 
-                           "Type of Packaging", "Processed",
-                           "CO2_Equivalent_per_Kilo"])
 
 # The CO2 Equivalent that is being used was measured according to the "Carbon Foot Print - Value" at a generic German supermarket checkout in 2019 by the Institute of Energy and Environmental Research in Heidelberg "ifeu"
 
@@ -75,11 +67,12 @@ IFEU_study_CFP_Germany2020 = [
     ["Orange Juice 1L", "Drinks","nan", "nan", "nan", True, "Carton", "processed", 0.7]
 ]
 
-df = pd.DataFrame(columns=["Product", "Type", "Country of Origin", 
+df_IFEU = pd.DataFrame(columns=["Product", "Type", "Country of Origin", 
                            "Method of Transportation", 
                            "Organic", "Seasonal", 
                            "Type of Packaging", "Processed", 
                            "CO2_Equivalent_per_Kilo"],data=IFEU_study_CFP_Germany2020)
+df_IFEU["Source"] ="IFEU study"
 
 #Information on Tomatoes (source: https://www.umweltdialog.de/de/verbraucher/lebensmittel/2015/Klimakiller-Tomaten-.php)
 tomatoe_values = [
@@ -97,24 +90,27 @@ tomatoes = pd.DataFrame(columns=["Product", "Type", "Country of Origin",
                            "Organic", "Seasonal", 
                            "Type of Packaging", "Processed", 
                            "CO2_Equivalent_per_Kilo"],data=tomatoe_values)
+tomatoes["Source"] = "www.umweltdialog.de"
 
 #Adding the information from Our World in Data
 #open the data:
 data2 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Our World in Data/OurWorldInData_food-footprints.csv"
 df_OWID = pd.read_csv(data2)
 
-#delete unneccessary columns and rename "Entity" to "Product"
-df_OWID["Product"] = df_OWID["Entity"]
+#delete unneccessary columns and rename "Entity" to "Product", dropping unneccessary columns
+df_OWID.rename(columns={"Entity":"Product"}, inplace=True) 
+df_OWID = df_OWID.drop(["Code"], axis =1)
+df_OWID = df_OWID.drop(["Year"], axis =1)
 
 #adding total CO2-eq
 df_OWID["CO2_Equivalent_per_Kilo"] = df_OWID.sum(axis=1)
-df_OWID = df_OWID.loc[:, df_OWID.columns.intersection(['Product','CO2_Equivalent_per_Kilo'])]
 df_OWID["Type"]=("Fruit", "Fruit", "Grain", "Meat", "Meat", "Sweets", "Fruit", "Vegetable", "Sweets", 
                  "Vegetable", "Dairy", "Fruit", "Drinks", "Sweets", "Eggs", "Fish", "Ingredients", 
                  "Meat","Vegetable", "Dairy", "Ingredients", "Grains", "Ingredients", "Vegetable", 
                  "Fruit","nan", "Vegetable", "Ingredient", "Vegetable", "Meat", "Vegetable", 
                  "Meat","Ingredients", "Grains", "Vegetable", "Fish", "Ingredients", "Substitute", 
                  "Ingredients", "Substitute", "Vegetable", "Grains", "Drinks")
+df_OWID["Source"] = "Our World in Data"
 
 #Adding data from supporting information of Drewnoski et al., Am. J. of Clinical Nutrition, 2015
 #open data
@@ -130,6 +126,7 @@ df_Drewnowski["Type"]=("Meat", "Pastries", "Dairy", "Pastries", "Drinks", "nan",
                        "Dish", "Vegetable", "Grains", "Sweets", "Dairy", "Vegetable", "Sweets", 
                        "Dairy", "Dairy", "Meat", "Eggs", "Pastries", "Pastries", "Fruit", "Fish",
                        "Daury", "Dish", "Dairy", "Dish")
+df_Drewnowski["Source"] = "Drewnowski et al., 2015"
 
 #Creating a DataFrame for Data on Tomato Ketchup from the following source: 
     #Wohner, Bernhard, et al., Science of the Total Environment 738 (2020): 139846.
@@ -143,6 +140,7 @@ ketchup_data = [
 ketchup = pd.DataFrame(columns=["Product", "Type", 
                            "Organic", "Type of Packaging", "Processed", 
                            "CO2_Equivalent_per_Kilo"],data=ketchup_data)
+ketchup["Source"] = "Wohner et al., 2020"
 
 #Creating a DataFrame for Carbonated Softdrinks from the following source:
     #Amienyo, David, et al.,The International Journal of Life Cycle Assessment 18.1 (2013): 77-92.
@@ -161,10 +159,47 @@ drinks_data = [
 drinks = pd.DataFrame(columns=["Product", "Type", 
                            "Type of Packaging", 
                            "CO2_Equivalent_per_Kilo"],data=drinks_data)
+drinks["Source"] = "Amienyo et al., 2013"
 
-#concatenating the datasets
-concatenated = pd.concat([df, tomatoes, df_OWID, df_Drewnowski, ketchup, drinks])
+
+
+#Add Data from https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/
+#NOTE: Original data is in g CO2-eq per kcal!!!
+statista_data = pd.DataFrame({"Product":["Beef/mutton", "Poultry", "Pork", "Eggs", "Dairy", "Fresh produce", "Rice", "Wheat", "Maize", "Pulses"],
+                         "processing":[22.0, 3.7, 3.51, 2.1, 1.8, 0.8, 0.5, 0.2, 0.1, 0.1],
+                         "Type":["Meat", "Meat", "Meat", "Eggs", "Dairy", "Vegetable", "Grains", "Grains", "Vegetable", "nan"]})
+statista_data["Source"] = "https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/"
+
+#conversion to kg CO2-eq per kg:
+statista_data["kcals/100g"] = [277, 272, 242, 155, 46, 65, 130, 329, 99, 567]
+statista_data["food_emissions_processing"] = statista_data["processing"] * statista_data["kcals/100g"]/10000
+statista_data.drop(labels="processing", axis=1, inplace=True)
+statista_data.drop(labels="kcals/100g", axis=1, inplace=True)
+statista_data["Processed"]="unprocessed"
+
+#Add Data from https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf
+#NOTE: Original data in kg CO2-eq per pound
+#Data on Page 26 to 39
+Meat_Eaters_Guide = pd.DataFrame({"Product":["Beef", "Lamb", "Pork", "Chicken", "Turkey", "Cheese", "Yoghurt", "Eggs", "Salmon", "Tuna"],
+                         "food_emissions_processing":[22.4, 20.4, 4.6, 2.3, 3.4, 9.1, 0.8, 2.1, 4.1, 3.2],
+                         "CO2_Equivalent_per_pound":[39.3, 39.3, 12.1, 6.9, 10.9, 13.5, 2.2, 4.8, 11.9, 6.1],
+                         "Type":["Meat", "Meat", "Meat", "Meat", "Meat", "Dairy", "Dairy", "Eggs", "Fish", "Fish"]})
+Meat_Eaters_Guide["Processed"]="unprocessed"
+Meat_Eaters_Guide["Source"] = "https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf"
+
+
+#conversion to kg CO2-eq per kg:
+Meat_Eaters_Guide["food_emissions_processing"] = Meat_Eaters_Guide["food_emissions_processing"]/0.4536
+Meat_Eaters_Guide["CO2_Equivalent_per_Kilo"] = Meat_Eaters_Guide["CO2_Equivalent_per_pound"]/0.4536
+Meat_Eaters_Guide.drop(labels="CO2_Equivalent_per_pound", axis=1, inplace=True)
+
+#concatenating the datasets and sorting everything alphabetically
+concatenated = pd.concat([df_IFEU, tomatoes, df_OWID, df_Drewnowski, ketchup, drinks,
+                          statista_data, Meat_Eaters_Guide])
 concatenated.replace("nan", np.nan, inplace=True)
+concatenated.sort_values("Product", inplace=True)
+concatenated.reset_index(drop=True, inplace=True)
+
 
 #saving the concatenated data for further use
 filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/organized lists.csv"
