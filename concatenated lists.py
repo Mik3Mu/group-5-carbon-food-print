@@ -1,9 +1,7 @@
 # Import modules
 import pandas as pd
 import numpy as np
-
-
-# The CO2 Equivalent that is being used was measured according to the "Carbon Foot Print - Value" at a generic German supermarket checkout in 2019 by the Institute of Energy and Environmental Research in Heidelberg "ifeu"
+#----------------------------------------------------------------------------------------------
 
 # Adding the Data: 5 of selected types each, often with their comparable product
 IFEU_study_CFP_Germany2020 = [
@@ -74,6 +72,7 @@ df_IFEU = pd.DataFrame(columns=["Product", "Type", "Country of Origin",
                            "CO2_Equivalent_per_Kilo"],data=IFEU_study_CFP_Germany2020)
 df_IFEU["Source"] ="IFEU study"
 
+
 #Information on Tomatoes (source: https://www.umweltdialog.de/de/verbraucher/lebensmittel/2015/Klimakiller-Tomaten-.php)
 tomatoe_values = [
     ["Tomatoes, heated greenhouse", "Vegetable", "Germany", "nan", False, False, "nan", "unprocessed", 9.3],
@@ -91,6 +90,7 @@ tomatoes = pd.DataFrame(columns=["Product", "Type", "Country of Origin",
                            "Type of Packaging", "Processed", 
                            "CO2_Equivalent_per_Kilo"],data=tomatoe_values)
 tomatoes["Source"] = "www.umweltdialog.de"
+
 
 #Adding the information from Our World in Data
 #open the data:
@@ -112,6 +112,7 @@ df_OWID["Type"]=("Fruit", "Fruit", "Grain", "Meat", "Meat", "Sweets", "Fruit", "
                  "Ingredients", "Substitute", "Vegetable", "Grains", "Drinks")
 df_OWID["Source"] = "Our World in Data"
 
+
 #Adding data from supporting information of Drewnoski et al., Am. J. of Clinical Nutrition, 2015
 #open data
 data3 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Drewnowski_AmJClinicalNutrition_2015/Extracted Table.xlsx"
@@ -128,6 +129,7 @@ df_Drewnowski["Type"]=("Meat", "Pastries", "Dairy", "Pastries", "Drinks", "nan",
                        "Daury", "Dish", "Dairy", "Dish")
 df_Drewnowski["Source"] = "Drewnowski et al., 2015"
 
+
 #Creating a DataFrame for Data on Tomato Ketchup from the following source: 
     #Wohner, Bernhard, et al., Science of the Total Environment 738 (2020): 139846.
 ketchup_data = [
@@ -141,6 +143,7 @@ ketchup = pd.DataFrame(columns=["Product", "Type",
                            "Organic", "Type of Packaging", "Processed", 
                            "CO2_Equivalent_per_Kilo"],data=ketchup_data)
 ketchup["Source"] = "Wohner et al., 2020"
+
 
 #Creating a DataFrame for Carbonated Softdrinks from the following source:
     #Amienyo, David, et al.,The International Journal of Life Cycle Assessment 18.1 (2013): 77-92.
@@ -162,7 +165,6 @@ drinks = pd.DataFrame(columns=["Product", "Type",
 drinks["Source"] = "Amienyo et al., 2013"
 
 
-
 #Add Data from https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/
 #NOTE: Original data is in g CO2-eq per kcal!!!
 statista_data = pd.DataFrame({"Product":["Beef/mutton", "Poultry", "Pork", "Eggs", "Dairy", "Fresh produce", "Rice", "Wheat", "Maize", "Pulses"],
@@ -177,6 +179,7 @@ statista_data.drop(labels="processing", axis=1, inplace=True)
 statista_data.drop(labels="kcals/100g", axis=1, inplace=True)
 statista_data["Processed"]="unprocessed"
 
+
 #Add Data from https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf
 #NOTE: Original data in kg CO2-eq per pound
 #Data on Page 26 to 39
@@ -187,20 +190,40 @@ Meat_Eaters_Guide = pd.DataFrame({"Product":["Beef", "Lamb", "Pork", "Chicken", 
 Meat_Eaters_Guide["Processed"]="unprocessed"
 Meat_Eaters_Guide["Source"] = "https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf"
 
-
 #conversion to kg CO2-eq per kg:
 Meat_Eaters_Guide["food_emissions_processing"] = Meat_Eaters_Guide["food_emissions_processing"]/0.4536
 Meat_Eaters_Guide["CO2_Equivalent_per_Kilo"] = Meat_Eaters_Guide["CO2_Equivalent_per_pound"]/0.4536
 Meat_Eaters_Guide.drop(labels="CO2_Equivalent_per_pound", axis=1, inplace=True)
 
+
+#Add Data from https://www.fao.org/gleam/results/en/
+fao_data = pd.DataFrame({"Product":["Beef", "Cattle Milk", "Small Ruminants Meat", "Small Ruminants Milk", "Buffalo Meat", "Buffalo Milk", "Pork", "Chicken Meat", "Chicken Eggs"],
+                         "Type":["Meat", "Dairy", "Meat", "Dairy", "Meat", "Dairy", "Meat", "Meat", "Eggs"],
+                         "emissions_kgCO2-eq per kg of protein":[295, 87, 201, 148, 404, 140, 55, 35, 31],
+                         "g protein per 100g":[26, 3.4, 25, 6, 21.62, 3.9, 27, 27, 13]})
+fao_data["Processed"] = "unprocessed"
+fao_data["Source"] = "https://www.fao.org/gleam/results/en/"
+
+#conversion to kg CO2-eq per kg:
+fao_data["CO2_Equivalent_per_Kilo"] = fao_data["emissions_kgCO2-eq per kg of protein"]*fao_data["g protein per 100g"]/100
+
+#Multiply total_emissions with 0.41 for animal feed (as feed accounts for 41% of total sector emissions)
+fao_data["food_emissions_animal_feed"] = 0.41 * fao_data["CO2_Equivalent_per_Kilo"]
+fao_data["food_emissions_animal_feed"] = fao_data["food_emissions_animal_feed"].round(decimals = 1)
+fao_data.drop(labels="emissions_kgCO2-eq per kg of protein", axis=1, inplace=True)
+fao_data.drop(labels="g protein per 100g", axis=1, inplace=True)
+
+#---------------------------------------------------------------------------------------------------------------------------
+
 #concatenating the datasets and sorting everything alphabetically
 concatenated = pd.concat([df_IFEU, tomatoes, df_OWID, df_Drewnowski, ketchup, drinks,
-                          statista_data, Meat_Eaters_Guide])
+                          statista_data, Meat_Eaters_Guide, fao_data])
 concatenated.replace("nan", np.nan, inplace=True)
 concatenated.sort_values("Product", inplace=True)
 concatenated.reset_index(drop=True, inplace=True)
 
+#--------------------------------------------------------------------------------------------------------------------------
 
 #saving the concatenated data for further use
 filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/organized lists.csv"
-concatenated.to_csv(filename)
+#concatenated.to_csv(filename)
