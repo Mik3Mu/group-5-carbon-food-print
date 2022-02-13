@@ -94,7 +94,8 @@ tomatoes["Source"] = "www.umweltdialog.de"
 
 #Adding the information from Our World in Data
 #open the data:
-data2 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Our World in Data/OurWorldInData_food-footprints.csv"
+data2 = "https://drive.google.com/file/d/1xzNgqYjhByxcYZJ36915UJtsw8OpxV-k/view?usp=sharing"
+data2 = 'https://drive.google.com/uc?id=' + data2.split('/')[-2]
 df_OWID = pd.read_csv(data2)
 
 #delete unneccessary columns and rename "Entity" to "Product", dropping unneccessary columns
