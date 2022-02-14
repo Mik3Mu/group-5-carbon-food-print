@@ -116,7 +116,8 @@ df_OWID["Source"] = "Our World in Data"
 
 #Adding data from supporting information of Drewnoski et al., Am. J. of Clinical Nutrition, 2015
 #open data
-data3 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Drewnowski_AmJClinicalNutrition_2015/Extracted Table.xlsx"
+data3 = "https://docs.google.com/spreadsheets/d/19SAmlAQbzOAhRfrolxGM5KMrDtLWut74/edit?usp=drive_web&ouid=107291675655917561403&rtpof=true"
+data3 = 'https://drive.google.com/uc?id=' + data3.split('/')[-2]
 df3 = pd.read_excel(data3)
 
 #adjusting the DataFrame
