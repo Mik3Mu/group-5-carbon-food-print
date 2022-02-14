@@ -217,9 +217,28 @@ fao_data.drop(labels="g protein per 100g", axis=1, inplace=True)
 
 #---------------------------------------------------------------------------------------------------------------------------
 
-#concatenating the datasets and sorting everything alphabetically
-concatenated = pd.concat([df_IFEU, tomatoes, df_OWID, df_Drewnowski, ketchup, drinks,
+#concatenating the datasets
+concatenated = pd.concat([df_IFEU, tomatoes, df_Drewnowski, ketchup, drinks,
                           statista_data, Meat_Eaters_Guide, fao_data])
+concatenated.replace("nan", np.nan, inplace=True)
+concatenated.sort_values("Product", inplace=True)
+concatenated.reset_index(drop=True, inplace=True)
+
+#----------------------------------------------------------------------------------------------------
+#setting values for transport etc
+concatenated["Type"].fillna("none", inplace=True)
+for i in concatenated["Type"]:
+    if i == "Fruit" :
+        concatenated["food_emissions_land_use"]=0.14*concatenated["CO2_Equivalent_per_Kilo"]
+        concatenated["food_emissions_farm"]=0.31*concatenated["CO2_Equivalent_per_Kilo"]
+        concatenated["food_emissions_animal_feed"]=0
+        concatenated["food_emissions_processing"]=2.5*10**(-17)*concatenated["CO2_Equivalent_per_Kilo"]
+        concatenated["food_emissions_transport"]=0.124*concatenated["CO2_Equivalent_per_Kilo"]
+        concatenated["food_emissions_retail"]=0
+        concatenated["food_emissions_packaging"]=6.1*10**(-17)*concatenated["CO2_Equivalent_per_Kilo"]
+
+#put df_OWID back in
+final = pd.concat([concatenated, df_OWID])
 concatenated.replace("nan", np.nan, inplace=True)
 concatenated.sort_values("Product", inplace=True)
 concatenated.reset_index(drop=True, inplace=True)
@@ -227,5 +246,5 @@ concatenated.reset_index(drop=True, inplace=True)
 #--------------------------------------------------------------------------------------------------------------------------
 
 #saving the concatenated data for further use
-filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/organized lists.csv"
-#concatenated.to_csv(filename)
+#filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/dataset for trying around.csv"
+#final.to_csv(filename)
