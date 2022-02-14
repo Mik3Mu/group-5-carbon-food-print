@@ -48,7 +48,8 @@ X_all = food_data[["food_emissions_land_use", "food_emissions_farm", "food_emiss
      "food_emissions_transport", "food_emissions_retail", "food_emissions_packaging"]]
 
 #Changing Predict Column to 0 and 1
-y_all = np.where(food_data["CO2_Equivalent_per_Kilo"]=='M', 1,0).astype(int)
+y_all = np.where(food_data["CO2_Equivalent_per_Kilo"]> 5, 1,0).astype(int)
+print(y_all)
 
 num_test = 0.20
 X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size=num_test, random_state=23)
@@ -84,14 +85,14 @@ print(accuracy_score(y_test, predictions))
 
 
 # 7.Testing the Model with kFold
-def run_kfold(clf):
+def run_kfold(X_all, y_all, clf):
     kf = KFold(n_splits=10)
     outcomes = []
     fold = 0
-    for train_index, test_index in kf:
+    for train_index, test_index in kf.split(X_all):
         fold += 1
         X_train, X_test = X_all.values[train_index], X_all.values[test_index]
-        y_train, y_test = y_all.values[train_index], y_all.values[test_index]
+        y_train, y_test = y_all[train_index], y_all[test_index]
         clf.fit(X_train, y_train)
         predictions = clf.predict(X_test)
         accuracy = accuracy_score(y_test, predictions)
@@ -100,4 +101,4 @@ def run_kfold(clf):
     mean_outcome = np.mean(outcomes)
     print("Mean Accuracy: {0}".format(mean_outcome))
 
-run_kfold(clf)
+run_kfold(X_all, y_all, clf)
