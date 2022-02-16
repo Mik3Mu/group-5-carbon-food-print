@@ -37,8 +37,8 @@ np.set_printoptions(linewidth=desired_width)
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows", None)
 
-# 3.Import CSV File
-url = "https://drive.google.com/file/d/1gjFX5lsuap1rlJkNcKBRmGi6tPA-57t1/view?usp=sharing"
+# 3.Import CSV File"
+url = "https://drive.google.com/file/d/1gq-pD4aSLdp48GGM6fTHzCeJGkz_qFiN/view?usp=sharing"
 url = 'https://drive.google.com/uc?id=' + url.split('/')[-2]
 food_data = pd.read_csv(url)
 
@@ -47,10 +47,10 @@ food_data = pd.read_csv(url)
 # 4.Checking missing datapoints
 print("Missing Values for each column:")
 print(food_data.isnull().sum())
-#CAUTION! Fillna just because otherwise the model doesn't work! Should be changed later!
+#Fillna in case there is missing data
 food_data = food_data.fillna(0)
-#CAUTION! Limiting data for testing/performance, will be changed later!
-food_data = food_data[:30]
+#Data can be limited here, if needed for testing purposes, just delete hashtag:
+#food_data = food_data[:30]
 print(food_data)
 
 # 5.Split Data in Training and Test Sets
@@ -142,7 +142,7 @@ plt.show(block=False)
 # 10.Linear Regression + Root Mean Squared Error
 
 #Fitting the regression model
-regr = linear_model.LinearRegression(positive = True)
+regr = linear_model.LinearRegression()
 regr.fit(independent,dependent)
 
 #Predicting the Total CO2 Emission
