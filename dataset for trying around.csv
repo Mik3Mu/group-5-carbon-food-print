@@ -1,0 +1,186 @@
+,Product,Type,Country of Origin,Method of Transportation,Organic,Seasonal,Type of Packaging,Processed,CO2_Equivalent_per_Kilo,Source,food_emissions_processing,food_emissions_animal_feed,food_emissions_land_use,food_emissions_farm,food_emissions_transport,food_emissions_retail,food_emissions_packaging
+0,Apple Juice 1L,Drinks,,,,True,Glas,processed,0.4,IFEU study,1.0000000000000002e-17,0.0,0.05600000000000001,0.124,0.049600000000000005,0.0,2.4400000000000003e-17
+1,Apples,Fruit,New Zealand,,,False,,unprocessed,0.8,IFEU study,2.0000000000000005e-17,0.0,0.11200000000000002,0.248,0.09920000000000001,0.0,4.8800000000000005e-17
+2,Apples,Fruit,Germany,,,True,,unprocessed,0.3,IFEU study,7.5e-18,0.0,0.042,0.093,0.0372,0.0,1.83e-17
+3,Avocado,Fruit,Peru,,False,,,False,0.8,IFEU study,2.0000000000000005e-17,0.0,0.11200000000000002,0.248,0.09920000000000001,0.0,4.8800000000000005e-17
+4,Avocado,Fruit,Peru,,True,,,False,0.8,IFEU study,2.0000000000000005e-17,0.0,0.11200000000000002,0.248,0.09920000000000001,0.0,4.8800000000000005e-17
+5,Beans,Vegetable,,,,,Can,canned,1.3,IFEU study,3.2500000000000004e-17,0.0,0.18200000000000002,0.403,0.1612,0.0,7.930000000000001e-17
+6,Beans,Vegetable,,,,,,unprocessed,0.8,IFEU study,2.0000000000000005e-17,0.0,0.11200000000000002,0.248,0.09920000000000001,0.0,4.8800000000000005e-17
+7,Beef,Meat,,,False,,,unprocessed,13.6,IFEU study,3.4e-16,0.0,1.9040000000000001,4.216,1.6864,0.0,8.296e-16
+8,Beef,Meat,,,,,,unprocessed,86.64021164021163,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,2.166005291005291e-15,0.0,12.12962962962963,26.858465608465607,10.743386243386242,0.0,5.28505291005291e-15
+9,Beef,Meat,,,,,,unprocessed,76.7,https://www.fao.org/gleam/results/en/,1.9175e-15,0.0,10.738000000000001,23.777,9.5108,0.0,4.678700000000001e-15
+10,Beef,Meat,,,True,,,unprocessed,15.1,IFEU study,3.775e-16,0.0,2.1140000000000003,4.681,1.8723999999999998,0.0,9.211000000000001e-16
+11,Beef/mutton,Meat,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+12,Beer 0.5L,Drinks,,,,,Glas,processed,0.9,IFEU study,2.2500000000000002e-17,0.0,0.12600000000000003,0.279,0.1116,0.0,5.490000000000001e-17
+13,Beer 0.5L,Drinks,,,,,Can,processed,1.0,IFEU study,2.5000000000000003e-17,0.0,0.14,0.31,0.124,0.0,6.1e-17
+14,Beet Sugar,Ingredient,,,True,,Paper,unprocessed,0.5,IFEU study,1.2500000000000001e-17,0.0,0.07,0.155,0.062,0.0,3.05e-17
+15,Beet Sugar,Ingredient,,,False,,Paper,unprocessed,0.7,IFEU study,1.75e-17,0.0,0.098,0.217,0.08679999999999999,0.0,4.27e-17
+16,"Biscuits, sweet",Pastries,,,,,,,2.16,"Drewnowski et al., 2015",5.400000000000001e-17,0.0,0.30240000000000006,0.6696000000000001,0.26784,0.0,1.3176000000000002e-16
+17,Breads,Pastries,,,,,,,6.25,"Drewnowski et al., 2015",1.5625000000000002e-16,0.0,0.8750000000000001,1.9375,0.775,0.0,3.8125000000000003e-16
+18,Breakfast cereals and cereal bars,Grains,,,,,,,2.97,"Drewnowski et al., 2015",7.425000000000001e-17,0.0,0.41580000000000006,0.9207000000000001,0.36828,0.0,1.8117000000000002e-16
+19,Broccoli,Vegetable,,,,,Plastic,frozen,0.3,IFEU study,7.5e-18,0.0,0.042,0.093,0.0372,0.0,1.83e-17
+20,Broccoli,Vegetable,,,,,unpackaged,unprocessed,0.3,IFEU study,7.5e-18,0.0,0.042,0.093,0.0372,0.0,1.83e-17
+21,Brown Bread,Pastries,Germany,,False,,,unprocessed,0.6,IFEU study,1.5e-17,0.0,0.084,0.186,0.0744,0.0,3.66e-17
+22,Brown Bread,Pastries,Germany,,False,,,unprocessed,0.6,IFEU study,1.5e-17,0.0,0.084,0.186,0.0744,0.0,3.66e-17
+23,Buffalo Meat,Meat,,,,,,unprocessed,87.34479999999999,https://www.fao.org/gleam/results/en/,2.18362e-15,0.0,12.228272,27.076887999999997,10.830755199999999,0.0,5.3280328e-15
+24,Buffalo Milk,Dairy,,,,,,unprocessed,5.46,https://www.fao.org/gleam/results/en/,1.3650000000000002e-16,0.0,0.7644000000000001,1.6925999999999999,0.67704,0.0,3.3306000000000003e-16
+25,Butter,Dairy,,,False,,Plastic,processed,9.0,IFEU study,2.25e-16,0.0,1.2600000000000002,2.79,1.116,0.0,5.49e-16
+26,Butter,Dairy,,,True,,Plastic,processed,11.5,IFEU study,2.8750000000000004e-16,0.0,1.61,3.565,1.426,0.0,7.015000000000001e-16
+27,Cakes and pastry,Pastries,,,,,,,3.26,"Drewnowski et al., 2015",8.15e-17,0.0,0.45640000000000003,1.0106,0.40424,0.0,1.9886000000000002e-16
+28,"Carbonated drink,ambient temp., 0.33l",Drinks,,,,,Aluminium can,,3.12,"Amienyo et al., 2013",7.800000000000001e-17,0.0,0.4368000000000001,0.9672000000000001,0.38688,0.0,1.9032000000000003e-16
+29,"Carbonated drink,ambient temp., 0.5l",Drinks,,,,,Plastic,,2.93,"Amienyo et al., 2013",7.325000000000001e-17,0.0,0.41020000000000006,0.9083,0.36332000000000003,0.0,1.7873000000000002e-16
+30,"Carbonated drink,ambient temp., 2l",Drinks,,,,,Plastic,,1.51,"Amienyo et al., 2013",3.7750000000000003e-17,0.0,0.21140000000000003,0.4681,0.18724,0.0,9.211000000000001e-17
+31,"Carbonated drink,chilled, 0.33l",Drinks,,,,,Aluminium can,,4.67,"Amienyo et al., 2013",1.1675e-16,0.0,0.6538,1.4477,0.57908,0.0,2.8487000000000003e-16
+32,"Carbonated drink,chilled, 0.5l",Drinks,,,,,Plastic,,3.88,"Amienyo et al., 2013",9.700000000000001e-17,0.0,0.5432,1.2027999999999999,0.48112,0.0,2.3668000000000003e-16
+33,Carrots,Vegetable,,,True,,,unprocessed,0.2,IFEU study,5.000000000000001e-18,0.0,0.028000000000000004,0.062,0.024800000000000003,0.0,1.2200000000000001e-17
+34,Carrots,Vegetable,,,False,,,unprocessed,0.2,IFEU study,5.000000000000001e-18,0.0,0.028000000000000004,0.062,0.024800000000000003,0.0,1.2200000000000001e-17
+35,Cattle Milk,Dairy,,,,,,unprocessed,2.958,https://www.fao.org/gleam/results/en/,7.395000000000001e-17,0.0,0.41412000000000004,0.91698,0.366792,0.0,1.8043800000000002e-16
+36,Champignon,Vegetable,,,,True,Can,canned,2.4,IFEU study,6e-17,0.0,0.336,0.744,0.2976,0.0,1.464e-16
+37,Champignon,Vegetable,,,,True,,unprocessed,1.3,IFEU study,3.2500000000000004e-17,0.0,0.18200000000000002,0.403,0.1612,0.0,7.930000000000001e-17
+38,Cheese,Dairy,,,,,,unprocessed,29.761904761904763,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,7.440476190476191e-16,0.0,4.166666666666667,9.226190476190476,3.6904761904761907,0.0,1.8154761904761907e-15
+39,Cheese,Dairy,,,True,,,processed,7.2,IFEU study,1.8000000000000002e-16,0.0,1.0080000000000002,2.232,0.8928,0.0,4.3920000000000007e-16
+40,Cheese,Dairy,,,False,,,processed,5.7,IFEU study,1.4250000000000002e-16,0.0,0.7980000000000002,1.7670000000000001,0.7068,0.0,3.4770000000000006e-16
+41,Chicken,Meat,,,,,,unprocessed,15.211640211640212,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,3.8029100529100534e-16,0.0,2.1296296296296298,4.715608465608466,1.8862433862433863,0.0,9.27910052910053e-16
+42,Chicken Eggs,Eggs,,,,,,unprocessed,4.03,https://www.fao.org/gleam/results/en/,1.0075000000000002e-16,0.0,0.5642,1.2493,0.49972000000000005,0.0,2.4583000000000004e-16
+43,Chicken Meat,Meat,,,,,,unprocessed,9.45,https://www.fao.org/gleam/results/en/,2.3625e-16,0.0,1.323,2.9294999999999995,1.1718,0.0,5.7645e-16
+44,Chips and snacks,Sweets,,,,,,,1.16,"Drewnowski et al., 2015",2.9e-17,0.0,0.16240000000000002,0.3596,0.14384,0.0,7.076e-17
+45,Chocolate and chocolate products,Sweets,,,,,,,3.1,"Drewnowski et al., 2015",7.750000000000001e-17,0.0,0.43400000000000005,0.961,0.3844,0.0,1.8910000000000003e-16
+46,"Coca Cola, 0.33l",Drinks,,,,,Aluminium can,,5.15,"Amienyo et al., 2013",1.2875000000000002e-16,0.0,0.7210000000000001,1.5965,0.6386000000000001,0.0,3.1415000000000004e-16
+47,"Coca Cola, 2l",Drinks,,,,,Plastic,,2.5,"Amienyo et al., 2013",6.25e-17,0.0,0.35000000000000003,0.775,0.31,0.0,1.5250000000000001e-16
+48,Coconut Oil,Ingredient,,,,,Glas,unprocessed,2.3,IFEU study,5.75e-17,0.0,0.322,0.713,0.28519999999999995,0.0,1.403e-16
+49,Coffee Powder,Drinks,,,False,True,Plastic,unprocessed,5.6,IFEU study,1.4e-16,0.0,0.784,1.736,0.6943999999999999,0.0,3.416e-16
+50,"Cola, 0.33l",Drinks,,,,,Aluminium can,,5.7,"Amienyo et al., 2013",1.4250000000000002e-16,0.0,0.7980000000000002,1.7670000000000001,0.7068,0.0,3.4770000000000006e-16
+51,"Cola, 0.5l",Drinks,,,,,Plastic,,3.9,"Amienyo et al., 2013",9.750000000000001e-17,0.0,0.546,1.209,0.4836,0.0,2.3790000000000003e-16
+52,"Cola, 2l",Drinks,,,,,Plastic,,2.5,"Amienyo et al., 2013",6.25e-17,0.0,0.35000000000000003,0.775,0.31,0.0,1.5250000000000001e-16
+53,Condiments and savory sauces,Dish,,,,,,,2.11,"Drewnowski et al., 2015",5.275e-17,0.0,0.2954,0.6540999999999999,0.26164,0.0,1.2871e-16
+54,Cream,Dairy,,,True,,,processed,5.3,IFEU study,1.325e-16,0.0,0.742,1.643,0.6572,0.0,3.233e-16
+55,Cream and similar,Dairy,,,,,,,2.56,"Drewnowski et al., 2015",6.4e-17,0.0,0.35840000000000005,0.7936,0.31744,0.0,1.5616e-16
+56,Curd,Dairy,,,True,,,processed,4.1,IFEU study,1.025e-16,0.0,0.574,1.271,0.5084,0.0,2.501e-16
+57,Dairy,Dairy,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+58,Eggs,Eggs,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+59,Eggs,Eggs,,,,,,unprocessed,10.582010582010582,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,2.6455026455026456e-16,0.0,1.4814814814814816,3.2804232804232805,1.312169312169312,0.0,6.455026455026456e-16
+60,Eggs and egg products,Eggs,,,,,,,4.49,"Drewnowski et al., 2015",1.1225000000000002e-16,0.0,0.6286,1.3919000000000001,0.55676,0.0,2.7389000000000005e-16
+61,Fish and frog products,Fish,,,,,,,5.33,"Drewnowski et al., 2015",1.3325000000000002e-16,0.0,0.7462000000000001,1.6523,0.66092,0.0,3.2513e-16
+62,"Fish and frogs, unprocessed",Fish,,,,,,,1.36,"Drewnowski et al., 2015",3.4000000000000004e-17,0.0,0.19040000000000004,0.42160000000000003,0.16864,0.0,8.296000000000001e-17
+63,Fresh produce,Vegetable,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+64,Fruit compotes,Fruit,,,,,,,1.94,"Drewnowski et al., 2015",4.8500000000000005e-17,0.0,0.2716,0.6013999999999999,0.24056,0.0,1.1834000000000002e-16
+65,"Hard, semi-hard or soft cheese",Dairy,,,,,,,10.71,"Drewnowski et al., 2015",2.6775000000000006e-16,0.0,1.4994000000000003,3.3201,1.32804,0.0,6.533100000000001e-16
+66,Honey,Sweets,,,,,Glas,unprocessed,2.0,IFEU study,5.0000000000000005e-17,0.0,0.28,0.62,0.248,0.0,1.22e-16
+67,Juices and nectars,Drinks,,,,,,,2.19,"Drewnowski et al., 2015",5.475e-17,0.0,0.30660000000000004,0.6789,0.27155999999999997,0.0,1.3359000000000002e-16
+68,"Ketchup, 380g",Vegetable,,,True,,Plastic,"processed, sauce",1.7,"Wohner et al., 2020",4.25e-17,0.0,0.23800000000000002,0.527,0.2108,0.0,1.037e-16
+69,"Ketchup, 450g",Vegetable,,,False,,Plastic,"processed, sauce",1.25,"Wohner et al., 2020",3.125e-17,0.0,0.17500000000000002,0.3875,0.155,0.0,7.625000000000001e-17
+70,"Ketchup, 480g",Vegetable,,,True,,Glas,"processed, sauce",1.78,"Wohner et al., 2020",4.450000000000001e-17,0.0,0.24920000000000003,0.5518,0.22072,0.0,1.0858000000000001e-16
+71,"Ketchup, 550g",Vegetable,,,True,,Plastic,"processed, sauce",1.31,"Wohner et al., 2020",3.275e-17,0.0,0.18340000000000004,0.4061,0.16244,0.0,7.991000000000001e-17
+72,Lamb,Meat,,,,,,unprocessed,86.64021164021163,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,2.166005291005291e-15,0.0,12.12962962962963,26.858465608465607,10.743386243386242,0.0,5.28505291005291e-15
+73,Lemonade 0.75L,Drinks,,,,,Plastic,processed,0.4,IFEU study,1.0000000000000002e-17,0.0,0.05600000000000001,0.124,0.049600000000000005,0.0,2.4400000000000003e-17
+74,Maize,Vegetable,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+75,Meat or poultry-based dishes,Meat,,,,,,,5.29,"Drewnowski et al., 2015",1.3225e-16,0.0,0.7406,1.6399,0.65596,0.0,3.2269e-16
+76,Meat products,Meat,,,,,,,7.42,"Drewnowski et al., 2015",1.855e-16,0.0,1.0388000000000002,2.3002,0.92008,0.0,4.5262e-16
+77,Milk,Dairy,,,,,,,1.72,"Drewnowski et al., 2015",4.3e-17,0.0,0.24080000000000001,0.5332,0.21328,0.0,1.0492000000000001e-16
+78,Milk,Dairy,,,True,,Carton,unprocessed,1.7,IFEU study,4.25e-17,0.0,0.23800000000000002,0.527,0.2108,0.0,1.037e-16
+79,Milk-based desserts,Dairy,,,,,,,2.27,"Drewnowski et al., 2015",5.675000000000001e-17,0.0,0.3178,0.7037,0.28148,0.0,1.3847e-16
+80,Non-chocolate candy,Sweets,,,,,,,2.53,"Drewnowski et al., 2015",6.325e-17,0.0,0.3542,0.7842999999999999,0.31372,0.0,1.5433e-16
+81,Oat Cream,Substitute,,,,,,processed,0.6,IFEU study,1.5e-17,0.0,0.084,0.186,0.0744,0.0,3.66e-17
+82,Oat Milk,Substitute,,,,,,processed,0.3,IFEU study,7.5e-18,0.0,0.042,0.093,0.0372,0.0,1.83e-17
+83,Olive Oil,Ingredient,,,,,Glas,unprocessed,3.2,IFEU study,8.000000000000002e-17,0.0,0.44800000000000006,0.992,0.39680000000000004,0.0,1.9520000000000002e-16
+84,Orange Juice 1L,Drinks,,,,True,Carton,processed,0.7,IFEU study,1.75e-17,0.0,0.098,0.217,0.08679999999999999,0.0,4.27e-17
+85,Pasta and semolina,none,,,,,,,2.68,"Drewnowski et al., 2015",6.700000000000002e-17,0.0,0.37520000000000003,0.8308000000000001,0.33232,0.0,1.6348000000000002e-16
+86,Pasta or cereal-based dishes,Dish,,,,,,,4.24,"Drewnowski et al., 2015",1.0600000000000002e-16,0.0,0.5936000000000001,1.3144,0.52576,0.0,2.5864000000000005e-16
+87,Peach,Fruit,,,,,unpackaged,unprocessed,0.2,IFEU study,5.000000000000001e-18,0.0,0.028000000000000004,0.062,0.024800000000000003,0.0,1.2200000000000001e-17
+88,Peach,Fruit,,,,,Can,canned,1.6,IFEU study,4.000000000000001e-17,0.0,0.22400000000000003,0.496,0.19840000000000002,0.0,9.760000000000001e-17
+89,Peanutbutter,Sweets,,,,,Glas,processed,2.0,IFEU study,5.0000000000000005e-17,0.0,0.28,0.62,0.248,0.0,1.22e-16
+90,Peanuts with Shell,Ingredient,,,False,,,unprocessed,0.8,IFEU study,2.0000000000000005e-17,0.0,0.11200000000000002,0.248,0.09920000000000001,0.0,4.8800000000000005e-17
+91,Pineapple,Fruit,,Ship,,,,unprocessed,0.6,IFEU study,1.5e-17,0.0,0.084,0.186,0.0744,0.0,3.66e-17
+92,Pineapple,Fruit,,Plane,,,,unprocessed,15.1,IFEU study,3.775e-16,0.0,2.1140000000000003,4.681,1.8723999999999998,0.0,9.211000000000001e-16
+93,"Pizzas, crepes, and savory pies",Dish,,,,,,,5.05,"Drewnowski et al., 2015",1.2625e-16,0.0,0.7070000000000001,1.5655,0.6262,0.0,3.0805e-16
+94,Pork,Meat,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+95,Pork,Meat,,,,,,unprocessed,26.67548500881834,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,6.668871252204586e-16,0.0,3.734567901234568,8.269400352733685,3.3077601410934743,0.0,1.627204585537919e-15
+96,Pork,Meat,,,True,,,unprocessed,5.2,IFEU study,1.3000000000000002e-16,0.0,0.7280000000000001,1.612,0.6448,0.0,3.1720000000000006e-16
+97,Pork,Meat,,,,,,unprocessed,14.85,https://www.fao.org/gleam/results/en/,3.7125e-16,0.0,2.079,4.6034999999999995,1.8414,0.0,9.058500000000001e-16
+98,Pork,Meat,,,False,,,unprocessed,4.6,IFEU study,1.15e-16,0.0,0.644,1.426,0.5703999999999999,0.0,2.806e-16
+99,Poultry,Meat,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+100,Poultry,Meat,,,,,,,2.62,"Drewnowski et al., 2015",6.55e-17,0.0,0.36680000000000007,0.8122,0.32488,0.0,1.5982000000000003e-16
+101,Processed or uncured cheese,Daury,,,,,,,6.54,"Drewnowski et al., 2015",1.6350000000000002e-16,0.0,0.9156000000000001,2.0274,0.81096,0.0,3.9894000000000003e-16
+102,Processed vegetables,Vegetable,,,,,,,2.17,"Drewnowski et al., 2015",5.4250000000000006e-17,0.0,0.3038,0.6727,0.26908,0.0,1.3237000000000002e-16
+103,Pulses,none,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+104,Rice,Grains,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+105,Rice and other grains,Grains,,,,,,,5.4,"Drewnowski et al., 2015",1.3500000000000002e-16,0.0,0.7560000000000001,1.6740000000000002,0.6696000000000001,0.0,3.2940000000000004e-16
+106,Rusks and unleavened breads,Pastries,,,,,,,1.31,"Drewnowski et al., 2015",3.275e-17,0.0,0.18340000000000004,0.4061,0.16244,0.0,7.991000000000001e-17
+107,Salmon,Fish,,,,,,unprocessed,26.23456790123457,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,6.558641975308643e-16,0.0,3.6728395061728403,8.132716049382717,3.2530864197530867,0.0,1.600308641975309e-15
+108,Salmon from Aquaculture,Fish,,,,,,unprocessed,5.1,IFEU study,1.275e-16,0.0,0.714,1.581,0.6324,0.0,3.111e-16
+109,Shrimp,Fish,,,,,,frozen,12.5,IFEU study,3.1250000000000005e-16,0.0,1.7500000000000002,3.875,1.55,0.0,7.625000000000001e-16
+110,Small Ruminants Meat,Meat,,,,,,unprocessed,50.25,https://www.fao.org/gleam/results/en/,1.25625e-15,0.0,7.035000000000001,15.5775,6.231,0.0,3.0652500000000003e-15
+111,Small Ruminants Milk,Dairy,,,,,,unprocessed,8.88,https://www.fao.org/gleam/results/en/,2.2200000000000003e-16,0.0,1.2432000000000003,2.7528,1.10112,0.0,5.416800000000001e-16
+112,Soft drinks,Drinks,,,,,,,2.84,"Drewnowski et al., 2015",7.100000000000001e-17,0.0,0.3976,0.8804,0.35216,0.0,1.7324e-16
+113,Soja Curd,Substitute,,,,,,processed,0.7,IFEU study,1.75e-17,0.0,0.098,0.217,0.08679999999999999,0.0,4.27e-17
+114,"Soups, ready-to-eat",Dish,,,,,,,2.74,"Drewnowski et al., 2015",6.850000000000002e-17,0.0,0.38360000000000005,0.8494,0.33976,0.0,1.6714000000000002e-16
+115,Sparkling Water 0.7L,Drinks,Germany,True,,,Glas,processed,0.2,IFEU study,5.000000000000001e-18,0.0,0.028000000000000004,0.062,0.024800000000000003,0.0,1.2200000000000001e-17
+116,Starchy tubers,Vegetable,,,,,,,3.23,"Drewnowski et al., 2015",8.075e-17,0.0,0.45220000000000005,1.0013,0.40052,0.0,1.9703000000000002e-16
+117,Strawberries,Fruit,Germany,,,True,,unprocessed,0.3,IFEU study,7.5e-18,0.0,0.042,0.093,0.0372,0.0,1.83e-17
+118,Strawberries,Fruit,,,,False,,unprocessed,3.4,IFEU study,8.5e-17,0.0,0.47600000000000003,1.054,0.4216,0.0,2.074e-16
+119,"Sugars, honeys, syrups",Sweets,,,,,,,0.9,"Drewnowski et al., 2015",2.2500000000000002e-17,0.0,0.12600000000000003,0.279,0.1116,0.0,5.490000000000001e-17
+120,Sweet rolls and brioches,Pastries,,,,,,,0.57,"Drewnowski et al., 2015",1.425e-17,0.0,0.0798,0.1767,0.07067999999999999,0.0,3.477e-17
+121,Tap Water,Drinks,,,Germany,True,unpackaged,unprocessed,0.0,IFEU study,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+122,Tempeh,Substitute,,,,,Plastic,processed,0.7,IFEU study,1.75e-17,0.0,0.098,0.217,0.08679999999999999,0.0,4.27e-17
+123,Tofu,Substitute,,,,,Plastic,processed,1.0,IFEU study,2.5000000000000003e-17,0.0,0.14,0.31,0.124,0.0,6.1e-17
+124,Tomatoes,Vegetable,,,,,Can,canned,1.8,IFEU study,4.5000000000000004e-17,0.0,0.25200000000000006,0.558,0.2232,0.0,1.0980000000000002e-16
+125,Tomatoes,Vegetable,,,,,Metal tube,Paste,4.3,IFEU study,1.0750000000000001e-16,0.0,0.602,1.333,0.5332,0.0,2.623e-16
+126,Tomatoes,Vegetable,Germany,,True,True,,unprocessed,0.035,www.umweltdialog.de,8.750000000000002e-19,0.0,0.004900000000000001,0.01085,0.00434,0.0,2.1350000000000002e-18
+127,Tomatoes,Vegetable,Germany,,False,True,,unprocessed,0.085,www.umweltdialog.de,2.1250000000000002e-18,0.0,0.011900000000000003,0.026350000000000002,0.01054,0.0,5.1850000000000005e-18
+128,Tomatoes,Vegetable,Canaries,Plane,,,,unprocessed,7.2,www.umweltdialog.de,1.8000000000000002e-16,0.0,1.0080000000000002,2.232,0.8928,0.0,4.3920000000000007e-16
+129,"Tomatoes, heated greenhouse",Vegetable,Germany,,False,False,,unprocessed,9.3,www.umweltdialog.de,2.3250000000000003e-16,0.0,1.3020000000000003,2.883,1.1532,0.0,5.673000000000001e-16
+130,"Tomatoes, heated greenhouse",Vegetable,Germany,,True,False,,unprocessed,9.2,www.umweltdialog.de,2.3e-16,0.0,1.288,2.852,1.1407999999999998,0.0,5.612e-16
+131,"Tomatoes, non-heated greenhouse",Vegetable,Germany,,False,False,,unprocessed,2.3,www.umweltdialog.de,5.75e-17,0.0,0.322,0.713,0.28519999999999995,0.0,1.403e-16
+132,"Tomatoes, open air",Vegetable,Spain,,,,,unprocessed,0.6,www.umweltdialog.de,1.5e-17,0.0,0.084,0.186,0.0744,0.0,3.66e-17
+133,Tuna,Fish,,,,,,unprocessed,13.447971781305114,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,3.3619929453262787e-16,0.0,1.8827160493827162,4.168871252204585,1.667548500881834,0.0,8.203262786596121e-16
+134,Turkey,Meat,,,,,,unprocessed,24.029982363315696,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,6.007495590828924e-16,0.0,3.364197530864198,7.4492945326278655,2.9797178130511464,0.0,1.4658289241622575e-15
+135,Veggie Patties,Substitute,,,,,Plastic,processed,1.45,IFEU study,3.6250000000000004e-17,0.0,0.203,0.4495,0.1798,0.0,8.845e-17
+136,Venison from Deer,Meat,,,,,,unprocessed,11.5,IFEU study,2.8750000000000004e-16,0.0,1.61,3.565,1.426,0.0,7.015000000000001e-16
+137,Wheat,Grains,,,,,,unprocessed,,https://www.statista.com/statistics/947969/greenhouse-gas-emissions-agricultural-production-worldwide-by-food-product/,,0.0,,,,0.0,
+138,White cheese,Dairy,,,,,,,2.96,"Drewnowski et al., 2015",7.400000000000001e-17,0.0,0.41440000000000005,0.9176,0.36704,0.0,1.8056000000000002e-16
+139,Wine 0.75L,Drinks,,,,True,Glas,processed,1.0,IFEU study,2.5000000000000003e-17,0.0,0.14,0.31,0.124,0.0,6.1e-17
+140,Yoghurt,Dairy,,,,,,unprocessed,4.8500881834215175,https://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf,1.2125220458553795e-16,0.0,0.6790123456790125,1.5035273368606703,0.6014109347442682,0.0,2.958553791887126e-16
+141,Yogurt,Dairy,,,,,,,2.4,"Drewnowski et al., 2015",6e-17,0.0,0.336,0.744,0.2976,0.0,1.464e-16
+0,Apples,Fruit,,,,,,,0.30000000000000004,Our World in Data,0.0,0.0,0.0,0.2,0.1,0.0,0.0
+1,Bananas,Fruit,,,,,,,0.7999999999999999,Our World in Data,0.1,0.0,0.0,0.3,0.3,0.0,0.1
+2,Barley,Grain,,,,,,,1.1,Our World in Data,0.1,0.0,0.0,0.2,0.0,0.3,0.5
+3,Beef (beef herd),Meat,,,,,,,59.6,Our World in Data,1.3,1.9,16.3,39.4,0.3,0.2,0.2
+4,Beef (dairy herd),Meat,,,,,,,21.099999999999998,Our World in Data,1.1,2.5,0.9,15.7,0.4,0.2,0.3
+5,Beet Sugar,Sweets,,,,,,,1.4,Our World in Data,0.2,0.0,0.0,0.5,0.6,0.0,0.1
+6,Berries & Grapes,Fruit,,,,,,,1.0999999999999999,Our World in Data,0.0,0.0,0.0,0.7,0.2,0.0,0.2
+7,Brassicas,Vegetable,,,,,,,0.4,Our World in Data,0.0,0.0,0.0,0.3,0.1,0.0,0.0
+8,Cane Sugar,Sweets,,,,,,,2.6,Our World in Data,0.0,0.0,1.2,0.5,0.8,0.0,0.1
+9,Cassava,Vegetable,,,,,,,0.9,Our World in Data,0.0,0.0,0.6,0.2,0.1,0.0,0.0
+10,Cheese,Dairy,,,,,,,21.200000000000003,Our World in Data,0.7,2.3,4.5,13.1,0.1,0.3,0.2
+11,Citrus Fruit,Fruit,,,,,,,0.3,Our World in Data,0.0,0.0,-0.1,0.3,0.1,0.0,0.0
+12,Coffee,Drinks,,,,,,,16.5,Our World in Data,0.6,0.0,3.7,10.4,0.1,0.1,1.6
+13,Dark Chocolate,Sweets,,,,,,,18.7,Our World in Data,0.2,0.0,14.3,3.7,0.1,0.0,0.4
+14,Eggs,Eggs,,,,,,,4.5,Our World in Data,0.0,2.2,0.7,1.3,0.1,0.0,0.2
+15,Fish (farmed),Fish,,,,,,,5.099999999999999,Our World in Data,0.0,0.8,0.5,3.6,0.1,0.0,0.1
+16,Groundnuts,Ingredients,,,,,,,2.4,Our World in Data,0.4,0.0,0.4,1.4,0.1,0.0,0.1
+17,Lamb & Mutton,Meat,,,,,,,24.5,Our World in Data,1.1,2.4,0.5,19.5,0.5,0.2,0.3
+18,Maize,Vegetable,,,,,,,1.1,Our World in Data,0.1,0.0,0.3,0.5,0.1,0.0,0.1
+19,Milk,Dairy,,,,,,,2.8000000000000003,Our World in Data,0.1,0.2,0.5,1.5,0.1,0.3,0.1
+20,Nuts,Ingredients,,,,,,,0.2,Our World in Data,0.0,0.0,-2.1,2.1,0.1,0.0,0.1
+21,Oatmeal,Grains,,,,,,,1.6,Our World in Data,0.0,0.0,0.0,1.4,0.1,0.0,0.1
+22,Olive Oil,Ingredients,,,,,,,6.0,Our World in Data,0.7,0.0,-0.4,4.3,0.5,0.0,0.9
+23,Onions & Leeks,Vegetable,,,,,,,0.30000000000000004,Our World in Data,0.0,0.0,0.0,0.2,0.1,0.0,0.0
+24,Other Fruit,Fruit,,,,,,,0.7,Our World in Data,0.0,0.0,0.1,0.4,0.2,0.0,0.0
+25,Other Pulses,nan,,,,,,,1.6,Our World in Data,0.0,0.0,0.0,1.1,0.1,0.0,0.4
+26,Other Vegetables,Vegetable,,,,,,,0.5,Our World in Data,0.1,0.0,0.0,0.2,0.2,0.0,0.0
+27,Palm Oil,Ingredient,,,,,,,7.6000000000000005,Our World in Data,1.3,0.0,3.1,2.1,0.2,0.0,0.9
+28,Peas,Vegetable,,,,,,,0.7999999999999999,Our World in Data,0.0,0.0,0.0,0.7,0.1,0.0,0.0
+29,Pig Meat,Meat,,,,,,,7.199999999999999,Our World in Data,0.3,2.9,1.5,1.7,0.3,0.2,0.3
+30,Potatoes,Vegetable,,,,,,,0.30000000000000004,Our World in Data,0.0,0.0,0.0,0.2,0.1,0.0,0.0
+31,Poultry Meat,Meat,,,,,,,6.1000000000000005,Our World in Data,0.4,1.8,2.5,0.7,0.3,0.2,0.2
+32,Rapeseed Oil,Ingredients,,,,,,,3.7,Our World in Data,0.2,0.0,0.2,2.3,0.2,0.0,0.8
+33,Rice,Grains,,,,,,,4.0,Our World in Data,0.1,0.0,0.0,3.6,0.1,0.1,0.1
+34,Root Vegetables,Vegetable,,,,,,,0.30000000000000004,Our World in Data,0.0,0.0,0.0,0.2,0.1,0.0,0.0
+35,Shrimps (farmed),Fish,,,,,,,11.799999999999999,Our World in Data,0.0,2.5,0.2,8.4,0.2,0.2,0.3
+36,Soybean Oil,Ingredients,,,,,,,5.999999999999999,Our World in Data,0.3,0.0,3.1,1.5,0.3,0.0,0.8
+37,Soymilk,Substitute,,,,,,,0.9999999999999999,Our World in Data,0.2,0.0,0.2,0.1,0.1,0.3,0.1
+38,Sunflower Oil,Ingredients,,,,,,,3.5000000000000004,Our World in Data,0.2,0.0,0.1,2.1,0.2,0.0,0.9
+39,Tofu,Substitute,,,,,,,3.0,Our World in Data,0.8,0.0,1.0,0.5,0.2,0.3,0.2
+40,Tomatoes,Vegetable,,,,,,,1.4000000000000001,Our World in Data,0.0,0.0,0.4,0.7,0.2,0.0,0.1
+41,Wheat & Rye,Grains,,,,,,,1.4000000000000004,Our World in Data,0.2,0.0,0.1,0.8,0.1,0.1,0.1
+42,Wine,Drinks,,,,,,,1.4,Our World in Data,0.1,0.0,-0.1,0.6,0.1,0.0,0.7

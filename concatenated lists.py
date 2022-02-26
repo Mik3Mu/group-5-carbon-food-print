@@ -48,11 +48,11 @@ IFEU_study_CFP_Germany2020 = [
     ["Brown Bread", "Pastries", "Germany", "nan", False , "nan", "nan", "unprocessed", 0.6],
     ["Brown Bread", "Pastries", "Germany", "nan", False , "nan", "nan", "unprocessed", 0.6],
     ["Honey", "Sweets", "nan", "nan", "nan", "nan", "Glas", "unprocessed", 2.0],
-    ["Olive Oil", "Ingredient", "nan", "nan", "nan", "nan", "Glas", "unprocessed", 3.2],
-    ["Coconut Oil", "Ingredient",  "nan", "nan", "nan", "nan", "Glas", "unprocessed", 2.3],
-    ["Beet Sugar", "Ingredient",  "nan", "nan", False, "nan", "Paper", "unprocessed", 0.7],
-    ["Beet Sugar", "Ingredient", "nan", "nan", True, "nan", "Paper", "unprocessed", 0.5],
-    ["Peanuts with Shell", "Ingredient", "nan", "nan", False, "nan", "nan", "unprocessed",0.8],
+    ["Olive Oil", "Ingredients", "nan", "nan", "nan", "nan", "Glas", "unprocessed", 3.2],
+    ["Coconut Oil", "Ingredients",  "nan", "nan", "nan", "nan", "Glas", "unprocessed", 2.3],
+    ["Beet Sugar", "Ingredients",  "nan", "nan", False, "nan", "Paper", "unprocessed", 0.7],
+    ["Beet Sugar", "Ingredients", "nan", "nan", True, "nan", "Paper", "unprocessed", 0.5],
+    ["Peanuts with Shell", "Ingredients", "nan", "nan", False, "nan", "nan", "unprocessed",0.8],
     ["Peanutbutter", "Sweets","nan", "nan", "nan", "nan", "Glas", "processed", 2.0],
     ["Beer 0.5L", "Drinks", "nan", "nan", "nan", "nan", "Glas", "processed", 0.9],
     ["Beer 0.5L", "Drinks", "nan", "nan", "nan", "nan", "Can", "processed", 1.0],
@@ -94,7 +94,8 @@ tomatoes["Source"] = "www.umweltdialog.de"
 
 #Adding the information from Our World in Data
 #open the data:
-data2 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Our World in Data/OurWorldInData_food-footprints.csv"
+data2 = "https://drive.google.com/file/d/1xzNgqYjhByxcYZJ36915UJtsw8OpxV-k/view?usp=sharing"
+data2 = 'https://drive.google.com/uc?id=' + data2.split('/')[-2]
 df_OWID = pd.read_csv(data2)
 
 #delete unneccessary columns and rename "Entity" to "Product", dropping unneccessary columns
@@ -104,10 +105,10 @@ df_OWID = df_OWID.drop(["Year"], axis =1)
 
 #adding total CO2-eq
 df_OWID["CO2_Equivalent_per_Kilo"] = df_OWID.sum(axis=1)
-df_OWID["Type"]=("Fruit", "Fruit", "Grain", "Meat", "Meat", "Sweets", "Fruit", "Vegetable", "Sweets", 
+df_OWID["Type"]=("Fruit", "Fruit", "Grains", "Meat", "Meat", "Sweets", "Fruit", "Vegetable", "Sweets", 
                  "Vegetable", "Dairy", "Fruit", "Drinks", "Sweets", "Eggs", "Fish", "Ingredients", 
                  "Meat","Vegetable", "Dairy", "Ingredients", "Grains", "Ingredients", "Vegetable", 
-                 "Fruit","nan", "Vegetable", "Ingredient", "Vegetable", "Meat", "Vegetable", 
+                 "Fruit","nan", "Vegetable", "Ingredients", "Vegetable", "Meat", "Vegetable", 
                  "Meat","Ingredients", "Grains", "Vegetable", "Fish", "Ingredients", "Substitute", 
                  "Ingredients", "Substitute", "Vegetable", "Grains", "Drinks")
 df_OWID["Source"] = "Our World in Data"
@@ -115,7 +116,8 @@ df_OWID["Source"] = "Our World in Data"
 
 #Adding data from supporting information of Drewnoski et al., Am. J. of Clinical Nutrition, 2015
 #open data
-data3 = "C:/Users/carol/Documents/TechLabs/Sources on CO2 footprint/Drewnowski_AmJClinicalNutrition_2015/Extracted Table.xlsx"
+data3 = "https://docs.google.com/spreadsheets/d/19SAmlAQbzOAhRfrolxGM5KMrDtLWut74/edit?usp=drive_web&ouid=107291675655917561403&rtpof=true"
+data3 = 'https://drive.google.com/uc?id=' + data3.split('/')[-2]
 df3 = pd.read_excel(data3)
 
 #adjusting the DataFrame
@@ -126,7 +128,7 @@ df_Drewnowski["Type"]=("Meat", "Pastries", "Dairy", "Pastries", "Drinks", "nan",
                        "Pastries", "Grains", "Dish", "Sweets", "Drinks", "Sweets", "Dairy",
                        "Dish", "Vegetable", "Grains", "Sweets", "Dairy", "Vegetable", "Sweets", 
                        "Dairy", "Dairy", "Meat", "Eggs", "Pastries", "Pastries", "Fruit", "Fish",
-                       "Daury", "Dish", "Dairy", "Dish")
+                       "Dairy", "Dish", "Dairy", "Dish")
 df_Drewnowski["Source"] = "Drewnowski et al., 2015"
 
 
@@ -215,15 +217,150 @@ fao_data.drop(labels="g protein per 100g", axis=1, inplace=True)
 
 #---------------------------------------------------------------------------------------------------------------------------
 
-#concatenating the datasets and sorting everything alphabetically
-concatenated = pd.concat([df_IFEU, tomatoes, df_OWID, df_Drewnowski, ketchup, drinks,
-                          statista_data, Meat_Eaters_Guide, fao_data])
+#concatenating the datasets
+concatenated = pd.concat([df_IFEU, tomatoes, df_Drewnowski, ketchup, drinks,
+                          statista_data, Meat_Eaters_Guide, fao_data, df_OWID])
 concatenated.replace("nan", np.nan, inplace=True)
-concatenated.sort_values("Product", inplace=True)
+concatenated.sort_values("Type", inplace=True)
 concatenated.reset_index(drop=True, inplace=True)
+
+#----------------------------------------------------------------------------------------------------
+#savinf df_OWID as Excel
+#df_OWID.sort_values("Type", inplace=True)
+#df_OWID.to_excel("C:/Users/carol/Documents/TechLabs/df_OWID.xlsx")
+
+#setting values for transport etc
+Fruits = concatenated.iloc[62:78, :]
+Fruits["CO2_Equivalent_per_Kilo"].fillna(Fruits["food_emissions_processing"]/2.5*10**(-17),inplace=True)
+Fruits["food_emissions_land_use"].fillna(0.14*Fruits["CO2_Equivalent_per_Kilo"], inplace=True)
+Fruits["food_emissions_farm"].fillna(0.31*Fruits["CO2_Equivalent_per_Kilo"], inplace=True)
+Fruits["food_emissions_animal_feed"].fillna(0, inplace=True)
+Fruits["food_emissions_processing"].fillna(2.5*10**(-17)*Fruits["CO2_Equivalent_per_Kilo"], inplace=True)
+Fruits["food_emissions_transport"].fillna(0.124*Fruits["CO2_Equivalent_per_Kilo"], inplace=True)
+Fruits["food_emissions_retail"].fillna(0, inplace=True)
+Fruits["food_emissions_packaging"].fillna(6.1*10**(-17)*Fruits["CO2_Equivalent_per_Kilo"], inplace=True)
+#Fruits.fillna(Fruits.mean(), inplace=True)
+
+Dairy = concatenated.iloc[0:22, :]
+Dairy["CO2_Equivalent_per_Kilo"].fillna(Dairy["food_emissions_processing"]/0.03, inplace=True)
+Dairy["food_emissions_land_use"].fillna(0.21*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+Dairy["food_emissions_farm"].fillna(0.61*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+Dairy["food_emissions_animal_feed"].fillna(0.10*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+Dairy["food_emissions_processing"].fillna(0.03*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+Dairy["food_emissions_transport"].fillna(0.01*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+Dairy["food_emissions_retail"].fillna(0.03*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+Dairy["food_emissions_packaging"].fillna(0.01*Dairy["CO2_Equivalent_per_Kilo"], inplace=True)
+#Dairy.fillna(Dairy.mean(), inplace=True)
+    
+Drinks = concatenated.iloc[26:49, :]
+Drinks["CO2_Equivalent_per_Kilo"].fillna(Drinks["food_emissions_processing"]/0.04, inplace=True)
+Drinks["food_emissions_land_use"].fillna(0.20*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+Drinks["food_emissions_farm"].fillna(0.61*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+Drinks["food_emissions_animal_feed"].fillna(0*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+Drinks["food_emissions_processing"].fillna(0.04*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+Drinks["food_emissions_transport"].fillna(0.01*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+Drinks["food_emissions_retail"].fillna(0.01*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+Drinks["food_emissions_packaging"].fillna(0.13*Drinks["CO2_Equivalent_per_Kilo"], inplace=True)
+#Drinks.fillna(Drinks.mean(), inplace=True)
+    
+Eggs = concatenated.iloc[49:54, :]
+Eggs["CO2_Equivalent_per_Kilo"].fillna(Eggs["CO2_Equivalent_per_Kilo"].mean(), inplace=True)
+Eggs["food_emissions_land_use"].fillna(0.16*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+Eggs["food_emissions_farm"].fillna(0.29*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+Eggs["food_emissions_animal_feed"].fillna(0.49*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+Eggs["food_emissions_processing"].fillna(0*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+Eggs["food_emissions_transport"].fillna(0.02*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+Eggs["food_emissions_retail"].fillna(0*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+Eggs["food_emissions_packaging"].fillna(0.04*Eggs["CO2_Equivalent_per_Kilo"], inplace=True)
+#Eggs.fillna(Eggs.mean(), inplace=True)
+    
+Fish = concatenated.iloc[54:62, :]
+Fish["food_emissions_land_use"].fillna(0.04*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+Fish["food_emissions_farm"].fillna(0.71*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+Fish["food_emissions_animal_feed"].fillna(0.20*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+Fish["food_emissions_processing"].fillna(0*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+Fish["food_emissions_transport"].fillna(0.02*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+Fish["food_emissions_retail"].fillna(0.01*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+Fish["food_emissions_packaging"].fillna(0.02*Fish["CO2_Equivalent_per_Kilo"], inplace=True)
+#Fish.fillna(Fish.mean(), inplace=True)
+    
+Grains = concatenated.iloc[78:86, :]
+Grains["CO2_Equivalent_per_Kilo"].fillna(Grains["food_emissions_processing"]/0.05, inplace=True)
+Grains["food_emissions_land_use"].fillna(0.01*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+Grains["food_emissions_farm"].fillna(0.74*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+Grains["food_emissions_animal_feed"].fillna(0*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+Grains["food_emissions_processing"].fillna(0.05*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+Grains["food_emissions_transport"].fillna(0.04*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+Grains["food_emissions_retail"].fillna(0.06*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+Grains["food_emissions_packaging"].fillna(0.10*Grains["CO2_Equivalent_per_Kilo"], inplace=True)
+#Grains.fillna(Grains.mean(), inplace=True)
+    
+Ingredients = concatenated.iloc[86:98, :]
+Ingredients["food_emissions_land_use"].fillna(0.15*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+Ingredients["food_emissions_farm"].fillna(0.54*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+Ingredients["food_emissions_animal_feed"].fillna(0*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+Ingredients["food_emissions_processing"].fillna(0.11*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+Ingredients["food_emissions_transport"].fillna(0.05*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+Ingredients["food_emissions_retail"].fillna(0*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+Ingredients["food_emissions_packaging"].fillna(0.15*Ingredients["CO2_Equivalent_per_Kilo"], inplace=True)
+#Ingredients.fillna(Ingredients.mean(), inplace=True)   
+ 
+Meat = concatenated.iloc[98:124, :]
+Meat["CO2_Equivalent_per_Kilo"].fillna(Meat["food_emissions_processing"]/0.04, inplace=True)
+Meat["food_emissions_land_use"].fillna(0.18*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+Meat["food_emissions_farm"].fillna(0.65*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+Meat["food_emissions_animal_feed"].fillna(0.10*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+Meat["food_emissions_processing"].fillna(0.04*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+Meat["food_emissions_transport"].fillna(0.02*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+Meat["food_emissions_retail"].fillna(0.01*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+Meat["food_emissions_packaging"].fillna(0.01*Meat["CO2_Equivalent_per_Kilo"], inplace=True)
+#Meat.fillna(Meat.mean(), inplace=True)
+    
+Substitute = concatenated.iloc[131:139, :]
+Substitute["food_emissions_land_use"].fillna(0.3*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+Substitute["food_emissions_farm"].fillna(0.15*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+Substitute["food_emissions_animal_feed"].fillna(0*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+Substitute["food_emissions_processing"].fillna(0.25*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+Substitute["food_emissions_transport"].fillna(0.08*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+Substitute["food_emissions_retail"].fillna(0.15*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+Substitute["food_emissions_packaging"].fillna(0.08*Substitute["CO2_Equivalent_per_Kilo"], inplace=True)
+#Substitute.fillna(Substitute.mean(), inplace=True)  
+  
+Vegetables = concatenated.iloc[148:181, :]
+Vegetables["CO2_Equivalent_per_Kilo"].fillna(Vegetables["food_emissions_processing"]/0.03, inplace=True)
+Vegetables["food_emissions_land_use"].fillna(0.22*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+Vegetables["food_emissions_farm"].fillna(0.53*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+Vegetables["food_emissions_animal_feed"].fillna(0*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+Vegetables["food_emissions_processing"].fillna(0.03*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+Vegetables["food_emissions_transport"].fillna(0.18*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+Vegetables["food_emissions_retail"].fillna(0*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+Vegetables["food_emissions_packaging"].fillna(0.03*Vegetables["CO2_Equivalent_per_Kilo"], inplace=True)
+#Vegetables.fillna(Vegetables.mean(), inplace=True)
+
+#average percentual values for step in food supply chain (from https://ourworldindata.org/environmental-impacts-of-food)
+Dish = concatenated.iloc[22:26,:]
+Pastries = concatenated.iloc[124:131, :]
+Sweets = concatenated.iloc[139:148, :]
+none = concatenated.iloc[182:,:]
+others = pd.concat([Dish, Pastries, Sweets, none])
+others["CO2_Equivalent_per_Kilo"].fillna(1.6, inplace=True)
+others["food_emissions_land_use"].fillna(0.24*others["CO2_Equivalent_per_Kilo"], inplace=True)
+others["food_emissions_farm"].fillna(0.27*others["CO2_Equivalent_per_Kilo"], inplace=True)
+others["food_emissions_animal_feed"].fillna(0.31*others["CO2_Equivalent_per_Kilo"], inplace=True)
+others["food_emissions_processing"].fillna(0.04*others["CO2_Equivalent_per_Kilo"], inplace=True)
+others["food_emissions_transport"].fillna(0.06*others["CO2_Equivalent_per_Kilo"], inplace=True)
+others["food_emissions_retail"].fillna(0.03*others["CO2_Equivalent_per_Kilo"], inplace=True)
+others["food_emissions_packaging"].fillna(0.05*others["CO2_Equivalent_per_Kilo"], inplace=True)
+
+#concatenate evrything including df_OWID and fao_data
+final = pd.concat([Dairy, Drinks, Eggs, Fish, Fruits, Grains, Ingredients, Meat,
+                   Substitute, Vegetables, others])
+final.replace("nan", np.nan, inplace=True)
+final.sort_values("Product", inplace=True)
+final.reset_index(drop=True, inplace=True)
 
 #--------------------------------------------------------------------------------------------------------------------------
 
-#saving the concatenated data for further use
-filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/organized lists.csv"
-#concatenated.to_csv(filename)
+#saving the data
+filename = "C:/Users/carol/Documents/TechLabs/group-5-carbon-food-print/complete dataset.csv"
+final.to_csv(filename)
