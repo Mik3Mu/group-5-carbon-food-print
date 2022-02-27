@@ -8,25 +8,85 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+import missingno as msno
+import os
 
 root_dir = os.path.abspath(os.curdir)
-df = pd.read_csv(os.path.join(root_dir, "..", "food_production.csv"))
+df = pd.read_csv(root_dir + "\Data\complete_dataset.csv")
 
 df.info()
+df.describe()
+
 print(df.head())
+
+#missing values
+df.isna()
+df.isna().sum()
+
+#visualize missingness
+msno.matrix(df)
+plt.show()
+
+dropped_df = df.dropna(axis="columns")
+msno.matrix(dropped_df)
+plt.show()
 
 #Distribution Analysis using df.hist()
 num_cols_df = df.select_dtypes("float64")
 num_cols_df.hist(figsize=(10, 10), bins=100)
 plt.show()
 
-#Data processing (X - features, y- target variable)
-X = df.drop(["total_emissions", "food_product"], axis = 1)
+dropped_num_col = dropped_df.select_dtypes("float")
+dropped_num_col.hist(figsize=(10,10), bins=100)
+plt.show()
 
-y = df["total_emissions"]
+fig, ax = plt.subplots(figsize=(15, 10))
+df.drop(["Unnamed: 0.1", "Unnamed: 0"], axis = 1).plot(x="Product", kind="bar", stacked=True, ax=ax)
+plt.xlabel("Product")
+plt.show()
+
+
+sns.countplot(x="Product", data=num_cols_df)
+plt.show()
+
+#Data processing (X - features, y- target variable)
+X = df.drop(["CO2_Equivalent_per_Kilo", "Product"], axis = 1)
+
+y = df["CO2_Equivalent_per_Kilo"]
 
 #Data splitting
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+#normalization is a scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1
+#fit scaler on training data
+norm = MinMaxScaler().fit(X_train)
+
+#transform training data
+X_train_norm = norm.transform(X_train)
+print("Scaled Train Data: \n\n")
+print(X_train_norm)
+
+#transform testing data
+X_test_norm = norm.transform(X_test)
+print("Scaled Test Data: \n\n")
+print(X_test_norm)
+
+#standardization is a scaling technique where the values are centered around the mean with a unit standard deviation
+#copy datasets
+X_train_stand = X_train.copy()
+X_test_stand = X_test.copy()
+
+#apply standardization on numerical features
+for i in num_cols_df:
+
+    #fit on training data column
+    scale = StandardScaler().fit(X_train_stand[i])
+    #transform the training data column
+    X_train_stand[i] = scale.transform(X_test_stand[[i]])
+    #transform the testing data column
+    X_test_stand[i] = scale.transform(X_test_stand[[i]])
+print("Scaled Train Data")
 
 #Model building
 lin_reg = LinearRegression()
