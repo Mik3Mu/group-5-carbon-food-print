@@ -37,21 +37,28 @@ num_cols_df = df.select_dtypes("float64")
 num_cols_df.hist(figsize=(10, 10), bins=100)
 plt.show()
 
-dropped_num_col = dropped_df.select_dtypes("float")
-dropped_num_col.hist(figsize=(10,10), bins=100)
-plt.show()
-
 fig, ax = plt.subplots(figsize=(15, 10))
 df.drop(["Unnamed: 0.1", "Unnamed: 0"], axis = 1).plot(x="Product", kind="bar", stacked=True, ax=ax)
 plt.xlabel("Product")
 plt.show()
 
 
-sns.countplot(x="Product", data=num_cols_df)
+sns.countplot(x="Product", data=df.drop(["Unnamed: 0.1", "Unnamed: 0"], axis = 1))
+plt.xticks(rotation=90, fontsize=5)
+plt.grid(True)
 plt.show()
 
 #Data processing (X - features, y- target variable)
-X = df.drop(["CO2_Equivalent_per_Kilo", "Product"], axis = 1)
+X = df.drop(["CO2_Equivalent_per_Kilo",
+             "Product",
+             "Type",
+             "Country of Origin",
+             "Method of Transportation",
+             "Organic",
+             "Seasonal",
+             "Type of Packaging",
+             "Processed",
+             "Source"], axis = 1)
 
 y = df["CO2_Equivalent_per_Kilo"]
 
@@ -69,7 +76,7 @@ print(X_train_norm)
 
 #transform testing data
 X_test_norm = norm.transform(X_test)
-print("Scaled Test Data: \n\n")
+print("Scaled Test Data with Normalization: \n\n")
 print(X_test_norm)
 
 #standardization is a scaling technique where the values are centered around the mean with a unit standard deviation
@@ -78,12 +85,12 @@ X_train_stand = X_train.copy()
 X_test_stand = X_test.copy()
 
 #apply standardization on numerical features
-for i in num_cols_df:
+for i in X.select_dtypes("float64").columns:
 
     #fit on training data column
-    scale = StandardScaler().fit(X_train_stand[i])
+    scale = StandardScaler().fit(X_train_stand[[i]])
     #transform the training data column
-    X_train_stand[i] = scale.transform(X_test_stand[[i]])
+    X_train_stand[i] = scale.transform(X_train_stand[[i]])
     #transform the testing data column
     X_test_stand[i] = scale.transform(X_test_stand[[i]])
 print("Scaled Train Data")
@@ -101,11 +108,8 @@ lr_train_r2 = r2_score(y_train, y_lr_train_pred)
 lr_test_mse = mean_squared_error(y_test, y_lr_test_pred)
 lr_test_r2 = r2_score(y_test, y_lr_test_pred)
 
-print(lr_train_mse)
-print(lr_train_r2)
-print(lr_test_mse)
-print(lr_test_r2)
 
 lr_results = pd.DataFrame(['Linear regression',lr_train_mse, lr_train_r2, lr_test_mse, lr_test_r2]).transpose()
 lr_results.columns = ["Method", "Training MSE", "Training R2", "Test MSE", "Test R2"]
+print(lr_results)
 
