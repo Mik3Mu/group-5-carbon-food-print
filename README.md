@@ -26,7 +26,7 @@ The repository contains the following folders:
       The program uses the following models: k-nearest neighbors, Logistic Regression, C-Support Vector Classification - Linear,
       C-Support Vector Classification, RandomForest, Decision Tree, Gaussian Naive Bayes
       
-The programs call on data stored in a google drive to make the programs not depend on local paths:
+The programs call on data stored in a google drive ("complete dataset.csv") to make the programs not depend on local paths:
 https://drive.google.com/drive/folders/1GIv8S7_wsJHCpfwIDiA96caf2_4DDvM7
 
 Python modules needed to run the programs:
