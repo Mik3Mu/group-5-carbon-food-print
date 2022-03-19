@@ -48,7 +48,7 @@ pd.set_option("display.max_rows", None)
 
 
 #3.Import CSV File
-url = "https://drive.google.com/file/d/1gq-pD4aSLdp48GGM6fTHzCeJGkz_qFiN/view?usp=sharing"
+url = "https://drive.google.com/file/d/1RgVDovPm_AuNKmGIikFyHeS0vZDBMlww/view?usp=sharing"
 url = 'https://drive.google.com/uc?id=' + url.split('/')[-2]
 food_data = pd.read_csv(url)
 
