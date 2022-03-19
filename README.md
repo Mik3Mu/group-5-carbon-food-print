@@ -18,10 +18,12 @@ The repository contains the following folders:
     As most datasets available contained very little information, the values for different emission factors were averaged for certain food groups as given by 
     the following source: 
     https://ourworldindata.org/food-choice-vs-eating-local
-3. Models
+3. Models:
     There are two relevant programs for the models used:
+    
     linear regression.py: 
       Linear regressions for the impact of each of the seven identified variables on the total CO2 emission of the food product.
+      
     Classification_Models.py: 
       The program uses the following models: k-nearest neighbors, Logistic Regression, C-Support Vector Classification - Linear,
       C-Support Vector Classification, RandomForest, Decision Tree, Gaussian Naive Bayes
