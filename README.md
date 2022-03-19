@@ -1,9 +1,11 @@
 # group-5-carbon-food-print
 Repository of the TechLabs Group 5: Carbon FoodPrint
+
 Contributors: Johanna van Betteray, Luca Bochnia, Carolin Borbeck, Mike Müller, Anastasia Yablokova
+
 Mentor: Amine Jebari
 
-The objective of the project was to predict the carbon footprint of several foot items based on different input factors. The data used consists of the dependent
+The objective of the project was to predict the carbon footprint of several foo items based on different input factors. The data used consists of the dependent
 variable "CO2 equivalent per Kilo" and seven independent variables: food emissions for processing, animal feed, land use, farm, transport, retail, and packaging.
 
 The repository contains the following folders:
@@ -28,9 +30,16 @@ The programs call on data stored in a google drive to make the programs not depe
 https://drive.google.com/drive/folders/1GIv8S7_wsJHCpfwIDiA96caf2_4DDvM7
 
 Python modules needed to run the programs:
+
 -pandas
+
 -numpy
+
 -matplotlib
+
 -seaborn
+
 -time
+
 -sklearn
+
