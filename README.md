@@ -15,8 +15,7 @@ The repository contains the following folders:
     The files in the folder have been kept to keep an overview of how the project progressed, especially at the beginning of the project phase.
 2. Data:
     The folder contains the program to compile the data which could be found as well as the final dataset that is used for the modeling. 
-    As most datasets available contained very little information, the values for different emission factors were averaged for certain food groups as given by 
-    the following source: 
+    As most datasets available contained very little information, the values for different emission factors were averaged for certain food groups (see file "average emission factors calculations.xlsx). The basis for the calculation is given by the following source: 
     https://ourworldindata.org/food-choice-vs-eating-local
 3. Models:
     There are two relevant programs for the models used:
