@@ -5,7 +5,7 @@ Contributors: Johanna van Betteray, Luca Bochnia, Carolin Borbeck, Mike Müller,
 
 Mentor: Amine Jebari
 
-The objective of the project was to predict the carbon footprint of several foo items based on different input factors. The data used consists of the dependent
+The objective of the project was to predict the carbon footprint of several food items based on different input factors. The data used consists of the dependent
 variable "CO2 equivalent per Kilo" and seven independent variables: food emissions for processing, animal feed, land use, farm, transport, retail, and packaging.
 
 The repository contains the following folders:
